@@ -1,0 +1,20 @@
+name: gemma_swe_root
+model: gemma-4-e4b-it-qat-w4a16-ct
+description: Local-first software engineering agent for Gemma 4 Developer Agent.
+instruction: !include prompts/system.md
+tools:
+  - name: run_command
+  - name: read_file
+  - name: edit_file
+  - name: write_file
+  - name: submit_patch
+  - name: get_status
+  - name: get_code_neighbors
+  - name: search_similar_code
+  - name: get_code_subgraph
+sub_agents:
+  - !include sub_agents/planner.yaml
+  - !include sub_agents/navigator.yaml
+  - !include sub_agents/coder.yaml
+  - !include sub_agents/reviewer.yaml
+generate_content_config: !include configs/sampling.yaml

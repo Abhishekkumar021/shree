@@ -1,0 +1,5 @@
+[eval]
+per_task_timeout_seconds = 1800
+require_tests = true
+record_traces = true
+traces_dir = "./logs/traces"

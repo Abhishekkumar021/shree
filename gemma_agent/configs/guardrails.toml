@@ -1,0 +1,81 @@
+[shell]
+enabled = true
+timeout_seconds = 30
+test_timeout_seconds = 120
+max_output_bytes = 200000
+max_concurrent = 1
+allow_python_dash_c = false
+allowed_binaries = [
+  "python",
+  "python3",
+  "python.exe",
+  "py",
+  "py.exe",
+  "pytest",
+  "pytest.exe",
+  "ruff",
+  "ruff.exe",
+]
+allowed_python_modules = ["pytest", "unittest", "ruff"]
+deny_substrings = [
+  "rm -rf",
+  "del /s",
+  "mkfs",
+  "shutdown",
+  "reboot",
+  "curl",
+  "wget",
+  "Invoke-WebRequest",
+  "Start-Process",
+  "powershell",
+  "pwsh",
+  "cmd.exe",
+  "sudo",
+  "chmod",
+  "chown",
+  "ssh",
+  "scp",
+  "nmap",
+  "docker",
+  "kubectl",
+  "pip install",
+  "uv pip",
+  "conda",
+  "npm",
+  "git push",
+  "git reset --hard",
+]
+
+[paths]
+jail_to_workspace = true
+max_file_bytes = 1048576
+allow_read_extensions = [
+  ".py",
+  ".pyi",
+  ".md",
+  ".txt",
+  ".toml",
+  ".yaml",
+  ".yml",
+  ".json",
+  ".ini",
+  ".cfg",
+  ".rst",
+]
+allow_write_extensions = [
+  ".py",
+  ".pyi",
+  ".md",
+  ".txt",
+  ".toml",
+  ".yaml",
+  ".yml",
+  ".json",
+]
+deny_names = [".env", ".git", "id_rsa", "secrets.yaml"]
+
+[budget]
+max_steps = 24
+max_shell_calls = 12
+max_file_writes = 40
+max_patch_bytes = 200000

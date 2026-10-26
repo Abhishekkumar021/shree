@@ -1,0 +1,6 @@
+name: planner
+model: gemma-4-e4b-it-qat-w4a16-ct
+instruction: !include ../prompts/planner.md
+tools:
+  - name: read_file
+  - name: get_status

@@ -1,0 +1,17 @@
+[agent]
+name = "gemma-swe-agent"
+max_steps = 24
+task_timeout_seconds = 600
+workspace = "./workspace"
+submission_dir = "./submission"
+
+[llm]
+provider = "llama_server"
+model = "gemma-4-e4b-it"
+temperature = 0.2
+max_tokens = 2048
+context_window = 4096
+
+[logging]
+level = "INFO"
+file = "./logs/agent.log"

@@ -1,0 +1,8 @@
+name: reviewer
+model: gemma-4-e4b-it-qat-w4a16-ct
+instruction: !include ../prompts/reviewer.md
+tools:
+  - name: read_file
+  - name: run_command
+  - name: submit_patch
+  - name: get_status

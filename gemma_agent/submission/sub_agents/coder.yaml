@@ -1,0 +1,8 @@
+name: coder
+model: gemma-4-e4b-it-qat-w4a16-ct
+instruction: !include ../prompts/coder.md
+tools:
+  - name: read_file
+  - name: edit_file
+  - name: write_file
+  - name: run_command

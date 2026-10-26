@@ -1,0 +1,24 @@
+active_profile = "local-e4b"
+
+[profiles.local-e4b]
+id = "gemma-4-e4b-it"
+gguf = "gemma-4-E4B_q4_0-it.gguf"
+context = 4096
+threads = 6
+jinja = true
+competition_id = "gemma-4-e4b-it-qat-w4a16-ct"
+small_model_prize_eligible = true
+
+[profiles.local-e2b]
+id = "gemma-4-e2b-it"
+gguf = "gemma-4-E2B_q4_0-it.gguf"
+context = 4096
+threads = 6
+jinja = true
+competition_id = "gemma-4-e2b-it-qat-w4a16-ct"
+small_model_prize_eligible = true
+
+[profiles.competition-31b]
+id = "gemma-4-31b-it"
+competition_id = "gemma-4-31b-it-qat-w4a16-ct"
+small_model_prize_eligible = false
