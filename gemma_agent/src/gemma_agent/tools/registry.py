@@ -5,7 +5,12 @@ from typing import Any
 from gemma_agent.guardrails.errors import GuardrailError
 from gemma_agent.guardrails.policy import GuardrailPolicy
 from gemma_agent.tools.base import Tool, openai_schema
-from gemma_agent.tools.filesystem import EditFileTool, ReadFileTool, WriteFileTool
+from gemma_agent.tools.filesystem import (
+    EditFileTool,
+    ListDirTool,
+    ReadFileTool,
+    WriteFileTool,
+)
 from gemma_agent.tools.graph import (
     GetCodeNeighborsTool,
     GetCodeSubgraphTool,
@@ -27,12 +32,16 @@ class ToolRegistry:
         tool = self._tools.get(name)
         if tool is None:
             raise GuardrailError(f"Unknown tool: {name}")
-        return tool.run(**arguments)
+        if not isinstance(arguments, dict):
+            raise GuardrailError("Tool arguments must be an object")
+        cleaned = {key: value for key, value in arguments.items() if key != "_raw"}
+        return tool.run(**cleaned)
 
 
 def build_default_registry(policy: GuardrailPolicy) -> ToolRegistry:
     return ToolRegistry(
         [
+            ListDirTool(policy),
             ReadFileTool(policy),
             WriteFileTool(policy),
             EditFileTool(policy),

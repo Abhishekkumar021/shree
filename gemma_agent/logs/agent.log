@@ -1,0 +1,476 @@
+2026-10-27 15:33:42,711 | INFO    | gemma_agent.llama | Starting llama-server: C:\llama\llama-server.exe -m C:\llama\models\gemma-4-E4B_q4_0-it.gguf -c 4096 -t 6 --jinja --host 127.0.0.1 --port 8080
+2026-10-27 15:33:43,694 | INFO    | gemma_agent.llama | llama-server is ready on 127.0.0.1:8080
+2026-10-27 15:33:43,711 | INFO    | llama-server | 0.00.027.344 I srv  llama_server: initializing ...
+2026-10-27 15:33:43,992 | INFO    | llama-server | 0.00.308.091 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+2026-10-27 15:33:44,003 | INFO    | llama-server | 0.00.313.016 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+2026-10-27 15:33:44,114 | INFO    | llama-server | 0.00.430.332 I srv    load_model: loading model 'C:\llama\models\gemma-4-E4B_q4_0-it.gguf'
+2026-10-27 15:33:46,452 | INFO    | llama-server | 0.02.769.835 W load: control-looking token:     50 '<|tool_response>' was not control-type; this is probably a bug in the model. its type will be overridden
+2026-10-27 15:33:46,460 | INFO    | llama-server | 0.02.770.075 W load: control-looking token:    212 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+2026-10-27 15:33:46,663 | INFO    | llama-server | 0.02.979.372 W load: '</s>' is a normal token here, removing it from EOG list
+2026-10-27 15:34:12,586 | INFO    | llama-server | 0.28.898.514 I cmn          init: llama threadpool init, n_threads = 6
+2026-10-27 15:34:39,187 | INFO    | llama-server | 0.55.502.294 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 4096, kv_unified = 'true'
+2026-10-27 15:34:39,294 | INFO    | llama-server | 0.55.609.899 I srv  llama_server: model loaded
+2026-10-27 15:34:39,312 | INFO    | llama-server | 0.55.610.384 I srv  llama_server: listening on http://127.0.0.1:8080
+2026-10-27 15:34:50,093 | INFO    | openai._base_client | Retrying request in 0.445779 seconds (retry 1 of 2)
+2026-10-27 15:34:50,850 | INFO    | llama-server | 1.07.165.708 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 0, t_last = -1
+2026-10-27 15:34:50,852 | INFO    | llama-server | 1.07.167.754 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+2026-10-27 15:35:03,757 | INFO    | llama-server | 1.20.072.795 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =    317, progress = 0.38, t =  12.90 s / 24.56 tokens per second
+2026-10-27 15:35:24,262 | INFO    | llama-server | 1.40.577.958 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =    795, progress = 0.95, t =  33.41 s / 23.80 tokens per second
+2026-10-27 15:35:25,904 | INFO    | llama-server | 1.42.219.465 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =    829, progress = 1.00, t =  35.05 s / 23.65 tokens per second
+2026-10-27 15:35:44,483 | INFO    | llama-server | 2.00.798.883 I slot print_timing: id  0 | task 0 | n_gen =    100, tg =   5.43 t/s, tg_3s =   5.48 t/s
+2026-10-27 15:35:45,321 | INFO    | llama-server | 2.01.637.348 I slot print_timing: id  0 | task 0 | prompt eval time =   35383.67 ms /   833 tokens (   42.48 ms per token,    23.54 tokens per second)
+2026-10-27 15:35:45,322 | INFO    | llama-server | 2.01.637.427 I slot print_timing: id  0 | task 0 |        eval time =   19085.56 ms /   105 tokens (  183.51 ms per token,     5.45 tokens per second)
+2026-10-27 15:35:45,322 | INFO    | llama-server | 2.01.637.778 I slot print_timing: id  0 | task 0 |       total time =   54469.23 ms /   938 tokens
+2026-10-27 15:35:45,323 | INFO    | llama-server | 2.01.637.786 I slot print_timing: id  0 | task 0 |    graphs reused =        104
+2026-10-27 15:35:45,323 | INFO    | llama-server | 2.01.637.808 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)
+2026-10-27 15:35:45,342 | INFO    | llama-server | 2.01.658.406 I slot      release: id  0 | task 0 | stop processing: n_tokens = 937, truncated = 0
+2026-10-27 15:35:45,349 | INFO    | httpx2 | HTTP Request: POST http://127.0.0.1:8080/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-27 15:35:45,429 | INFO    | gemma_agent.loop | Model produced no tool call; stopping
+2026-10-27 15:35:45,431 | INFO    | gemma_agent.llama | Stopping llama-server
+2026-10-27 15:37:18,646 | INFO    | gemma_agent.llama | Starting llama-server: C:\llama\llama-server.exe -m C:\llama\models\gemma-4-E4B_q4_0-it.gguf -c 4096 -t 6 --jinja --host 127.0.0.1 --port 8080
+2026-10-27 15:37:18,789 | INFO    | llama-server | 0.00.008.238 I srv  llama_server: initializing ...
+2026-10-27 15:37:18,884 | INFO    | llama-server | 0.00.104.408 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+2026-10-27 15:37:18,884 | INFO    | llama-server | 0.00.104.920 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+2026-10-27 15:37:18,899 | INFO    | llama-server | 0.00.117.843 I srv    load_model: loading model 'C:\llama\models\gemma-4-E4B_q4_0-it.gguf'
+2026-10-27 15:37:19,994 | INFO    | llama-server | 0.01.214.585 W load: control-looking token:     50 '<|tool_response>' was not control-type; this is probably a bug in the model. its type will be overridden
+2026-10-27 15:37:19,994 | INFO    | llama-server | 0.01.214.676 W load: control-looking token:    212 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+2026-10-27 15:37:20,064 | INFO    | llama-server | 0.01.283.246 W load: '</s>' is a normal token here, removing it from EOG list
+2026-10-27 15:37:27,630 | INFO    | llama-server | 0.08.849.048 I cmn          init: llama threadpool init, n_threads = 6
+2026-10-27 15:37:29,579 | INFO    | llama-server | 0.10.798.044 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 4096, kv_unified = 'true'
+2026-10-27 15:37:29,654 | INFO    | llama-server | 0.10.873.070 I srv  llama_server: model loaded
+2026-10-27 15:37:29,654 | INFO    | llama-server | 0.10.873.097 I srv  llama_server: listening on http://127.0.0.1:8080
+2026-10-27 15:37:30,329 | INFO    | gemma_agent.llama | llama-server is ready on 127.0.0.1:8080
+2026-10-27 15:37:30,884 | INFO    | llama-server | 0.12.102.433 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 0, t_last = -1
+2026-10-27 15:37:30,885 | INFO    | llama-server | 0.12.103.925 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+2026-10-27 15:37:45,049 | INFO    | llama-server | 0.26.267.453 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =    338, progress = 0.40, t =  14.16 s / 23.86 tokens per second
+2026-10-27 15:38:03,423 | INFO    | llama-server | 0.44.641.937 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =    795, progress = 0.93, t =  32.54 s / 24.43 tokens per second
+2026-10-27 15:38:06,315 | INFO    | llama-server | 0.47.534.270 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =    850, progress = 1.00, t =  35.43 s / 23.99 tokens per second
+2026-10-27 15:38:28,175 | INFO    | llama-server | 1.09.393.544 I slot print_timing: id  0 | task 0 | n_gen =    100, tg =   4.61 t/s, tg_3s =   4.66 t/s
+2026-10-27 15:38:31,307 | INFO    | llama-server | 1.12.525.669 I slot print_timing: id  0 | task 0 | n_gen =    120, tg =   4.84 t/s, tg_3s =   6.39 t/s
+2026-10-27 15:38:34,459 | INFO    | llama-server | 1.15.678.184 I slot print_timing: id  0 | task 0 | n_gen =    140, tg =   5.01 t/s, tg_3s =   6.34 t/s
+2026-10-27 15:38:35,879 | INFO    | llama-server | 1.17.096.753 I slot print_timing: id  0 | task 0 | prompt eval time =   35829.87 ms /   854 tokens (   41.96 ms per token,    23.83 tokens per second)
+2026-10-27 15:38:35,879 | INFO    | llama-server | 1.17.096.768 I slot print_timing: id  0 | task 0 |        eval time =   29162.31 ms /   148 tokens (  198.38 ms per token,     5.04 tokens per second)
+2026-10-27 15:38:35,879 | INFO    | llama-server | 1.17.097.149 I slot print_timing: id  0 | task 0 |       total time =   64992.18 ms /  1002 tokens
+2026-10-27 15:38:35,880 | INFO    | llama-server | 1.17.097.157 I slot print_timing: id  0 | task 0 |    graphs reused =        147
+2026-10-27 15:38:35,880 | INFO    | llama-server | 1.17.097.159 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)
+2026-10-27 15:38:35,881 | INFO    | llama-server | 1.17.097.939 I slot      release: id  0 | task 0 | stop processing: n_tokens = 1001, truncated = 0
+2026-10-27 15:38:35,884 | INFO    | httpx2 | HTTP Request: POST http://127.0.0.1:8080/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-27 15:38:35,920 | INFO    | llama-server | 1.17.138.456 W srv    operator(): got exception: {"error":{"code":500,"message":"Failed to parse messages: Missing tool call type: {\"id\":\"g7um6SRkT6c5eZ0VXmWn5R4XvTMyR5Uj\",\"name\":\"read_file\",\"arguments\":{\"filepath\":\".\"}}","type":"server_error"}}
+2026-10-27 15:38:35,921 | INFO    | httpx2 | HTTP Request: POST http://127.0.0.1:8080/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-10-27 15:38:35,922 | INFO    | openai._base_client | Retrying request in 0.455981 seconds (retry 1 of 2)
+2026-10-27 15:38:36,382 | INFO    | httpx2 | HTTP Request: POST http://127.0.0.1:8080/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-10-27 15:38:36,383 | INFO    | llama-server | 1.17.600.149 W srv    operator(): got exception: {"error":{"code":500,"message":"Failed to parse messages: Missing tool call type: {\"id\":\"g7um6SRkT6c5eZ0VXmWn5R4XvTMyR5Uj\",\"name\":\"read_file\",\"arguments\":{\"filepath\":\".\"}}","type":"server_error"}}
+2026-10-27 15:38:36,383 | INFO    | openai._base_client | Retrying request in 0.945189 seconds (retry 2 of 2)
+2026-10-27 15:38:37,331 | INFO    | httpx2 | HTTP Request: POST http://127.0.0.1:8080/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-10-27 15:38:37,331 | INFO    | llama-server | 1.18.550.187 W srv    operator(): got exception: {"error":{"code":500,"message":"Failed to parse messages: Missing tool call type: {\"id\":\"g7um6SRkT6c5eZ0VXmWn5R4XvTMyR5Uj\",\"name\":\"read_file\",\"arguments\":{\"filepath\":\".\"}}","type":"server_error"}}
+2026-10-27 15:38:37,333 | INFO    | gemma_agent.llama | Stopping llama-server
+2026-10-27 15:41:42,024 | INFO    | gemma_agent.llama | Starting llama-server: C:\llama\llama-server.exe -m C:\llama\models\gemma-4-E4B_q4_0-it.gguf -c 4096 -t 6 --jinja --host 127.0.0.1 --port 8080
+2026-10-27 15:41:42,309 | INFO    | llama-server | 0.00.013.113 I srv  llama_server: initializing ...
+2026-10-27 15:41:42,462 | INFO    | llama-server | 0.00.164.580 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+2026-10-27 15:41:42,463 | INFO    | llama-server | 0.00.165.636 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+2026-10-27 15:41:42,470 | INFO    | llama-server | 0.00.173.876 I srv    load_model: loading model 'C:\llama\models\gemma-4-E4B_q4_0-it.gguf'
+2026-10-27 15:41:43,680 | INFO    | llama-server | 0.01.383.218 W load: control-looking token:     50 '<|tool_response>' was not control-type; this is probably a bug in the model. its type will be overridden
+2026-10-27 15:41:43,680 | INFO    | llama-server | 0.01.383.326 W load: control-looking token:    212 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+2026-10-27 15:41:43,745 | INFO    | llama-server | 0.01.450.036 W load: '</s>' is a normal token here, removing it from EOG list
+2026-10-27 15:41:52,561 | INFO    | llama-server | 0.10.263.517 I cmn          init: llama threadpool init, n_threads = 6
+2026-10-27 15:41:54,471 | INFO    | llama-server | 0.12.174.418 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 4096, kv_unified = 'true'
+2026-10-27 15:41:54,526 | INFO    | llama-server | 0.12.229.074 I srv  llama_server: model loaded
+2026-10-27 15:41:54,526 | INFO    | llama-server | 0.12.229.579 I srv  llama_server: listening on http://127.0.0.1:8080
+2026-10-27 15:41:54,832 | INFO    | gemma_agent.llama | llama-server is ready on 127.0.0.1:8080
+2026-10-27 15:41:55,347 | INFO    | llama-server | 0.13.055.541 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 0, t_last = -1
+2026-10-27 15:41:55,347 | INFO    | llama-server | 0.13.057.157 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+2026-10-27 15:42:11,631 | INFO    | llama-server | 0.29.334.535 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =    452, progress = 0.47, t =  16.28 s / 27.77 tokens per second
+2026-10-27 15:42:27,672 | INFO    | llama-server | 0.45.374.791 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =    889, progress = 0.92, t =  32.32 s / 27.51 tokens per second
+2026-10-27 15:42:30,808 | INFO    | llama-server | 0.48.510.688 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =    964, progress = 1.00, t =  35.45 s / 27.19 tokens per second
+2026-10-27 15:42:43,725 | INFO    | llama-server | 1.01.428.324 I slot print_timing: id  0 | task 0 | prompt eval time =   35732.35 ms /   968 tokens (   36.91 ms per token,    27.09 tokens per second)
+2026-10-27 15:42:43,726 | INFO    | llama-server | 1.01.428.338 I slot print_timing: id  0 | task 0 |        eval time =   12638.00 ms /    77 tokens (  166.29 ms per token,     6.01 tokens per second)
+2026-10-27 15:42:43,726 | INFO    | llama-server | 1.01.428.384 I slot print_timing: id  0 | task 0 |       total time =   48370.35 ms /  1045 tokens
+2026-10-27 15:42:43,726 | INFO    | llama-server | 1.01.428.387 I slot print_timing: id  0 | task 0 |    graphs reused =         75
+2026-10-27 15:42:43,726 | INFO    | llama-server | 1.01.428.393 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)
+2026-10-27 15:42:43,731 | INFO    | llama-server | 1.01.433.870 I slot      release: id  0 | task 0 | stop processing: n_tokens = 1044, truncated = 0
+2026-10-27 15:42:43,734 | INFO    | httpx2 | HTTP Request: POST http://127.0.0.1:8080/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-27 15:42:43,815 | INFO    | llama-server | 1.01.519.102 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.965 (> 0.100 thold), f_keep = 0.927
+2026-10-27 15:42:43,815 | INFO    | llama-server | 1.01.519.968 I slot launch_slot_: id  0 | task 81 | processing task, is_child = 0
+2026-10-27 15:43:05,763 | INFO    | llama-server | 1.23.467.690 I slot print_timing: id  0 | task 81 | n_gen =    100, tg =   4.92 t/s, tg_3s =   4.97 t/s
+2026-10-27 15:43:08,895 | INFO    | llama-server | 1.26.597.603 I slot print_timing: id  0 | task 81 | n_gen =    120, tg =   5.12 t/s, tg_3s =   6.39 t/s
+2026-10-27 15:43:12,048 | INFO    | llama-server | 1.29.752.060 I slot print_timing: id  0 | task 81 | n_gen =    137, tg =   5.15 t/s, tg_3s =   5.39 t/s
+2026-10-27 15:43:15,250 | INFO    | llama-server | 1.32.954.742 I slot print_timing: id  0 | task 81 | n_gen =    155, tg =   5.20 t/s, tg_3s =   5.62 t/s
+2026-10-27 15:43:18,405 | INFO    | llama-server | 1.36.108.705 I slot print_timing: id  0 | task 81 | n_gen =    173, tg =   5.25 t/s, tg_3s =   5.71 t/s
+2026-10-27 15:43:20,666 | INFO    | llama-server | 1.38.368.727 I slot print_timing: id  0 | task 81 | prompt eval time =    1832.82 ms /    35 tokens (   52.37 ms per token,    19.10 tokens per second)
+2026-10-27 15:43:20,666 | INFO    | llama-server | 1.38.368.741 I slot print_timing: id  0 | task 81 |        eval time =   35015.72 ms /   188 tokens (  187.25 ms per token,     5.34 tokens per second)
+2026-10-27 15:43:20,667 | INFO    | llama-server | 1.38.368.743 I slot print_timing: id  0 | task 81 |       total time =   36848.55 ms /   223 tokens
+2026-10-27 15:43:20,667 | INFO    | httpx2 | HTTP Request: POST http://127.0.0.1:8080/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-27 15:43:20,667 | INFO    | llama-server | 1.38.368.745 I slot print_timing: id  0 | task 81 |    graphs reused =        260
+2026-10-27 15:43:20,669 | INFO    | llama-server | 1.38.368.751 I slot print_timing: id  0 | task 81 |   graph reallocs =          0    /     0        (same size) / (changed size)
+2026-10-27 15:43:20,670 | INFO    | llama-server | 1.38.369.063 I slot      release: id  0 | task 81 | stop processing: n_tokens = 1190, truncated = 0
+2026-10-27 15:43:20,739 | INFO    | llama-server | 1.38.442.630 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.943 (> 0.100 thold), f_keep = 0.840
+2026-10-27 15:43:20,741 | INFO    | llama-server | 1.38.443.706 I slot launch_slot_: id  0 | task 271 | processing task, is_child = 0
+2026-10-27 15:43:26,011 | INFO    | llama-server | 1.43.714.009 I slot print_timing: id  0 | task 271 | prompt processing, n_tokens =     56, progress = 1.00, t =   5.27 s / 10.63 tokens per second
+2026-10-27 15:43:42,637 | INFO    | llama-server | 2.00.340.744 I slot print_timing: id  0 | task 271 | n_gen =    100, tg =   6.20 t/s, tg_3s =   6.27 t/s
+2026-10-27 15:43:45,769 | INFO    | llama-server | 2.03.472.400 I slot print_timing: id  0 | task 271 | n_gen =    121, tg =   6.29 t/s, tg_3s =   6.71 t/s
+2026-10-27 15:43:48,799 | INFO    | llama-server | 2.06.504.183 I slot print_timing: id  0 | task 271 | n_gen =    140, tg =   6.28 t/s, tg_3s =   6.27 t/s
+2026-10-27 15:43:51,836 | INFO    | llama-server | 2.09.539.817 I slot print_timing: id  0 | task 271 | n_gen =    159, tg =   6.28 t/s, tg_3s =   6.26 t/s
+2026-10-27 15:43:54,856 | INFO    | llama-server | 2.12.559.163 I slot print_timing: id  0 | task 271 | n_gen =    173, tg =   6.10 t/s, tg_3s =   4.64 t/s
+2026-10-27 15:43:57,935 | INFO    | llama-server | 2.15.639.834 I slot print_timing: id  0 | task 271 | n_gen =    194, tg =   6.17 t/s, tg_3s =   6.82 t/s
+2026-10-27 15:44:01,010 | INFO    | llama-server | 2.18.713.098 I slot print_timing: id  0 | task 271 | n_gen =    213, tg =   6.18 t/s, tg_3s =   6.18 t/s
+2026-10-27 15:44:04,092 | INFO    | llama-server | 2.21.795.093 I slot print_timing: id  0 | task 271 | n_gen =    233, tg =   6.20 t/s, tg_3s =   6.49 t/s
+2026-10-27 15:44:07,219 | INFO    | llama-server | 2.24.922.528 I slot print_timing: id  0 | task 271 | n_gen =    253, tg =   6.22 t/s, tg_3s =   6.40 t/s
+2026-10-27 15:44:10,309 | INFO    | llama-server | 2.28.012.782 I slot print_timing: id  0 | task 271 | n_gen =    270, tg =   6.17 t/s, tg_3s =   5.50 t/s
+2026-10-27 15:44:13,445 | INFO    | llama-server | 2.31.148.671 I slot print_timing: id  0 | task 271 | n_gen =    276, tg =   5.88 t/s, tg_3s =   1.91 t/s
+2026-10-27 15:44:16,646 | INFO    | llama-server | 2.34.349.423 I slot print_timing: id  0 | task 271 | n_gen =    281, tg =   5.60 t/s, tg_3s =   1.56 t/s
+2026-10-27 15:44:20,000 | INFO    | llama-server | 2.37.703.085 I slot print_timing: id  0 | task 271 | n_gen =    290, tg =   5.42 t/s, tg_3s =   2.68 t/s
+2026-10-27 15:44:25,161 | INFO    | llama-server | 2.42.863.887 I slot print_timing: id  0 | task 271 | n_gen =    301, tg =   5.13 t/s, tg_3s =   2.13 t/s
+2026-10-27 15:44:28,308 | INFO    | llama-server | 2.46.011.693 I slot print_timing: id  0 | task 271 | n_gen =    314, tg =   5.08 t/s, tg_3s =   4.13 t/s
+2026-10-27 15:44:30,871 | INFO    | llama-server | 2.48.573.686 I slot print_timing: id  0 | task 271 | prompt eval time =    5937.56 ms /    60 tokens (   98.96 ms per token,    10.11 tokens per second)
+2026-10-27 15:44:30,871 | INFO    | llama-server | 2.48.573.702 I slot print_timing: id  0 | task 271 |        eval time =   64192.11 ms /   325 tokens (  198.12 ms per token,     5.05 tokens per second)
+2026-10-27 15:44:30,871 | INFO    | llama-server | 2.48.573.706 I slot print_timing: id  0 | task 271 |       total time =   70129.67 ms /   385 tokens
+2026-10-27 15:44:30,872 | INFO    | llama-server | 2.48.573.710 I slot print_timing: id  0 | task 271 |    graphs reused =        582
+2026-10-27 15:44:30,872 | INFO    | llama-server | 2.48.573.712 I slot print_timing: id  0 | task 271 |   graph reallocs =          0    /     0        (same size) / (changed size)
+2026-10-27 15:44:30,872 | INFO    | llama-server | 2.48.574.805 I slot      release: id  0 | task 271 | stop processing: n_tokens = 1384, truncated = 0
+2026-10-27 15:44:30,874 | INFO    | httpx2 | HTTP Request: POST http://127.0.0.1:8080/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-27 15:44:31,183 | INFO    | llama-server | 2.48.886.368 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.840 (> 0.100 thold), f_keep = 0.764
+2026-10-27 15:44:31,187 | INFO    | llama-server | 2.48.887.337 I slot launch_slot_: id  0 | task 598 | processing task, is_child = 0
+2026-10-27 15:44:45,792 | INFO    | llama-server | 3.03.495.099 I slot print_timing: id  0 | task 598 | prompt processing, n_tokens =    197, progress = 1.00, t =  14.61 s / 13.49 tokens per second
+2026-10-27 15:45:02,837 | INFO    | llama-server | 3.20.540.400 I slot print_timing: id  0 | task 598 | n_gen =    100, tg =   5.98 t/s, tg_3s =   6.04 t/s
+2026-10-27 15:45:05,870 | INFO    | llama-server | 3.23.573.502 I slot print_timing: id  0 | task 598 | n_gen =    119, tg =   6.03 t/s, tg_3s =   6.26 t/s
+2026-10-27 15:45:08,900 | INFO    | llama-server | 3.26.603.748 I slot print_timing: id  0 | task 598 | n_gen =    137, tg =   6.02 t/s, tg_3s =   5.94 t/s
+2026-10-27 15:45:11,974 | INFO    | llama-server | 3.29.678.663 I slot print_timing: id  0 | task 598 | n_gen =    154, tg =   5.96 t/s, tg_3s =   5.53 t/s
+2026-10-27 15:45:14,997 | INFO    | llama-server | 3.32.700.637 I slot print_timing: id  0 | task 598 | n_gen =    168, tg =   5.82 t/s, tg_3s =   4.63 t/s
+2026-10-27 15:45:18,174 | INFO    | llama-server | 3.35.877.201 I slot print_timing: id  0 | task 598 | n_gen =    183, tg =   5.71 t/s, tg_3s =   4.72 t/s
+2026-10-27 15:45:21,261 | INFO    | llama-server | 3.38.964.095 I slot print_timing: id  0 | task 598 | n_gen =    202, tg =   5.75 t/s, tg_3s =   6.16 t/s
+2026-10-27 15:45:24,450 | INFO    | llama-server | 3.42.153.242 I slot print_timing: id  0 | task 598 | n_gen =    215, tg =   5.61 t/s, tg_3s =   4.08 t/s
+2026-10-27 15:45:29,133 | INFO    | llama-server | 3.46.836.883 I slot print_timing: id  0 | task 598 | n_gen =    224, tg =   5.21 t/s, tg_3s =   1.92 t/s
+2026-10-27 15:45:32,278 | INFO    | llama-server | 3.49.981.385 I slot print_timing: id  0 | task 598 | n_gen =    226, tg =   4.89 t/s, tg_3s =   0.64 t/s
+2026-10-27 15:45:35,423 | INFO    | llama-server | 3.53.126.312 I slot print_timing: id  0 | task 598 | n_gen =    236, tg =   4.78 t/s, tg_3s =   3.18 t/s
+2026-10-27 15:45:38,464 | INFO    | llama-server | 3.56.168.314 I slot print_timing: id  0 | task 598 | n_gen =    247, tg =   4.71 t/s, tg_3s =   3.62 t/s
+2026-10-27 15:45:41,828 | INFO    | llama-server | 3.59.531.107 I slot print_timing: id  0 | task 598 | n_gen =    260, tg =   4.66 t/s, tg_3s =   3.87 t/s
+2026-10-27 15:45:44,905 | INFO    | llama-server | 4.02.609.972 I slot print_timing: id  0 | task 598 | n_gen =    266, tg =   4.52 t/s, tg_3s =   1.95 t/s
+2026-10-27 15:45:47,928 | INFO    | llama-server | 4.05.632.208 I slot print_timing: id  0 | task 598 | n_gen =    280, tg =   4.53 t/s, tg_3s =   4.63 t/s
+2026-10-27 15:45:51,064 | INFO    | llama-server | 4.08.767.472 I slot print_timing: id  0 | task 598 | n_gen =    287, tg =   4.42 t/s, tg_3s =   2.23 t/s
+2026-10-27 15:45:54,776 | INFO    | llama-server | 4.12.479.506 I slot print_timing: id  0 | task 598 | n_gen =    299, tg =   4.35 t/s, tg_3s =   3.23 t/s
+2026-10-27 15:45:57,886 | INFO    | llama-server | 4.15.588.923 I slot print_timing: id  0 | task 598 | n_gen =    309, tg =   4.30 t/s, tg_3s =   3.22 t/s
+2026-10-27 15:46:01,002 | INFO    | llama-server | 4.18.704.724 I slot print_timing: id  0 | task 598 | n_gen =    317, tg =   4.23 t/s, tg_3s =   2.57 t/s
+2026-10-27 15:46:04,216 | INFO    | llama-server | 4.21.918.876 I slot print_timing: id  0 | task 598 | n_gen =    321, tg =   4.11 t/s, tg_3s =   1.24 t/s
+2026-10-27 15:46:07,242 | INFO    | llama-server | 4.24.944.839 I slot print_timing: id  0 | task 598 | n_gen =    329, tg =   4.05 t/s, tg_3s =   2.64 t/s
+2026-10-27 15:46:10,381 | INFO    | llama-server | 4.28.084.687 I slot print_timing: id  0 | task 598 | n_gen =    348, tg =   4.13 t/s, tg_3s =   6.05 t/s
+2026-10-27 15:46:13,904 | INFO    | llama-server | 4.31.611.131 I slot print_timing: id  0 | task 598 | n_gen =    356, tg =   4.05 t/s, tg_3s =   2.27 t/s
+2026-10-27 15:46:18,417 | INFO    | llama-server | 4.36.119.756 I slot print_timing: id  0 | task 598 | n_gen =    367, tg =   3.97 t/s, tg_3s =   2.44 t/s
+2026-10-27 15:46:21,486 | INFO    | llama-server | 4.39.189.945 I slot print_timing: id  0 | task 598 | n_gen =    377, tg =   3.95 t/s, tg_3s =   3.26 t/s
+2026-10-27 15:46:24,505 | INFO    | llama-server | 4.42.209.696 I slot print_timing: id  0 | task 598 | n_gen =    391, tg =   3.97 t/s, tg_3s =   4.64 t/s
+2026-10-27 15:46:27,529 | INFO    | llama-server | 4.45.232.168 I slot print_timing: id  0 | task 598 | n_gen =    400, tg =   3.94 t/s, tg_3s =   2.98 t/s
+2026-10-27 15:46:30,673 | INFO    | llama-server | 4.48.376.761 I slot print_timing: id  0 | task 598 | n_gen =    414, tg =   3.96 t/s, tg_3s =   4.45 t/s
+2026-10-27 15:46:33,912 | INFO    | llama-server | 4.51.615.783 I slot print_timing: id  0 | task 598 | n_gen =    417, tg =   3.87 t/s, tg_3s =   0.93 t/s
+2026-10-27 15:46:36,938 | INFO    | llama-server | 4.54.641.388 I slot print_timing: id  0 | task 598 | n_gen =    424, tg =   3.82 t/s, tg_3s =   2.31 t/s
+2026-10-27 15:46:41,511 | INFO    | llama-server | 4.59.215.274 I slot print_timing: id  0 | task 598 | n_gen =    425, tg =   3.68 t/s, tg_3s =   0.22 t/s
+2026-10-27 15:46:47,142 | INFO    | llama-server | 5.04.845.728 I slot print_timing: id  0 | task 598 | n_gen =    426, tg =   3.52 t/s, tg_3s =   0.18 t/s
+2026-10-27 15:46:50,796 | INFO    | llama-server | 5.08.500.995 I slot print_timing: id  0 | task 598 | n_gen =    433, tg =   3.47 t/s, tg_3s =   1.92 t/s
+2026-10-27 15:46:53,933 | INFO    | llama-server | 5.11.637.109 I slot print_timing: id  0 | task 598 | n_gen =    441, tg =   3.45 t/s, tg_3s =   2.55 t/s
+2026-10-27 15:46:56,981 | INFO    | llama-server | 5.14.684.850 I slot print_timing: id  0 | task 598 | n_gen =    448, tg =   3.42 t/s, tg_3s =   2.30 t/s
+2026-10-27 15:47:00,251 | INFO    | llama-server | 5.17.954.760 I slot print_timing: id  0 | task 598 | n_gen =    459, tg =   3.42 t/s, tg_3s =   3.36 t/s
+2026-10-27 15:47:03,348 | INFO    | llama-server | 5.21.051.779 I slot print_timing: id  0 | task 598 | n_gen =    466, tg =   3.39 t/s, tg_3s =   2.26 t/s
+2026-10-27 15:47:06,449 | INFO    | llama-server | 5.24.152.351 I slot print_timing: id  0 | task 598 | n_gen =    481, tg =   3.42 t/s, tg_3s =   4.84 t/s
+2026-10-27 15:47:09,782 | INFO    | llama-server | 5.27.485.271 I slot print_timing: id  0 | task 598 | n_gen =    487, tg =   3.39 t/s, tg_3s =   1.80 t/s
+2026-10-27 15:47:12,927 | INFO    | llama-server | 5.30.632.217 I slot print_timing: id  0 | task 598 | n_gen =    504, tg =   3.43 t/s, tg_3s =   5.40 t/s
+2026-10-27 15:47:16,337 | INFO    | llama-server | 5.34.039.932 I slot print_timing: id  0 | task 598 | n_gen =    509, tg =   3.39 t/s, tg_3s =   1.47 t/s
+2026-10-27 15:47:19,478 | INFO    | llama-server | 5.37.181.749 I slot print_timing: id  0 | task 598 | n_gen =    522, tg =   3.40 t/s, tg_3s =   4.14 t/s
+2026-10-27 15:47:22,606 | INFO    | llama-server | 5.40.309.323 I slot print_timing: id  0 | task 598 | n_gen =    524, tg =   3.35 t/s, tg_3s =   0.64 t/s
+2026-10-27 15:47:23,530 | INFO    | llama-server | 5.41.232.956 I slot print_timing: id  0 | task 598 | prompt eval time =   15106.27 ms /   201 tokens (   75.16 ms per token,    13.31 tokens per second)
+2026-10-27 15:47:23,544 | INFO    | llama-server | 5.41.232.974 I slot print_timing: id  0 | task 598 |        eval time =  157233.19 ms /   525 tokens (  300.06 ms per token,     3.33 tokens per second)
+2026-10-27 15:47:23,546 | INFO    | llama-server | 5.41.233.706 I slot print_timing: id  0 | task 598 |       total time =  172339.46 ms /   726 tokens
+2026-10-27 15:47:23,548 | INFO    | llama-server | 5.41.233.714 I slot print_timing: id  0 | task 598 |    graphs reused =       1103
+2026-10-27 15:47:23,548 | INFO    | llama-server | 5.41.233.716 I slot print_timing: id  0 | task 598 |   graph reallocs =          0    /     0        (same size) / (changed size)
+2026-10-27 15:47:23,550 | INFO    | llama-server | 5.41.250.014 I slot      release: id  0 | task 598 | stop processing: n_tokens = 1782, truncated = 0
+2026-10-27 15:47:23,565 | INFO    | httpx2 | HTTP Request: POST http://127.0.0.1:8080/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-27 15:47:24,268 | INFO    | llama-server | 5.41.971.102 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.836 (> 0.100 thold), f_keep = 0.704
+2026-10-27 15:47:24,277 | INFO    | llama-server | 5.41.974.770 I slot launch_slot_: id  0 | task 1125 | processing task, is_child = 0
+2026-10-27 15:47:37,746 | INFO    | llama-server | 5.55.448.984 I slot print_timing: id  0 | task 1125 | prompt processing, n_tokens =    242, progress = 1.00, t =  13.47 s / 17.96 tokens per second
+2026-10-27 15:47:54,185 | INFO    | llama-server | 6.11.888.334 I slot print_timing: id  0 | task 1125 | n_gen =    100, tg =   6.14 t/s, tg_3s =   6.20 t/s
+2026-10-27 15:47:58,290 | INFO    | llama-server | 6.15.993.678 I slot print_timing: id  0 | task 1125 | n_gen =    105, tg =   5.14 t/s, tg_3s =   1.22 t/s
+2026-10-27 15:48:01,463 | INFO    | llama-server | 6.19.166.036 I slot print_timing: id  0 | task 1125 | n_gen =    108, tg =   4.57 t/s, tg_3s =   0.95 t/s
+2026-10-27 15:48:04,633 | INFO    | llama-server | 6.22.336.293 I slot print_timing: id  0 | task 1125 | n_gen =    117, tg =   4.37 t/s, tg_3s =   2.84 t/s
+2026-10-27 15:48:07,665 | INFO    | llama-server | 6.25.368.121 I slot print_timing: id  0 | task 1125 | n_gen =    132, tg =   4.43 t/s, tg_3s =   4.95 t/s
+2026-10-27 15:48:10,716 | INFO    | llama-server | 6.28.419.370 I slot print_timing: id  0 | task 1125 | n_gen =    149, tg =   4.53 t/s, tg_3s =   5.57 t/s
+2026-10-27 15:48:13,787 | INFO    | llama-server | 6.31.490.458 I slot print_timing: id  0 | task 1125 | n_gen =    166, tg =   4.62 t/s, tg_3s =   5.54 t/s
+2026-10-27 15:48:16,826 | INFO    | llama-server | 6.34.528.473 I slot print_timing: id  0 | task 1125 | n_gen =    181, tg =   4.64 t/s, tg_3s =   4.94 t/s
+2026-10-27 15:48:19,958 | INFO    | llama-server | 6.37.660.870 I slot print_timing: id  0 | task 1125 | n_gen =    192, tg =   4.56 t/s, tg_3s =   3.51 t/s
+2026-10-27 15:48:23,077 | INFO    | llama-server | 6.40.780.625 I slot print_timing: id  0 | task 1125 | n_gen =    203, tg =   4.49 t/s, tg_3s =   3.53 t/s
+2026-10-27 15:48:28,872 | INFO    | llama-server | 6.46.575.279 I slot print_timing: id  0 | task 1125 | n_gen =    212, tg =   4.15 t/s, tg_3s =   1.55 t/s
+2026-10-27 15:48:31,993 | INFO    | llama-server | 6.49.695.591 I slot print_timing: id  0 | task 1125 | n_gen =    223, tg =   4.12 t/s, tg_3s =   3.53 t/s
+2026-10-27 15:48:37,798 | INFO    | llama-server | 6.55.501.154 I slot print_timing: id  0 | task 1125 | n_gen =    234, tg =   3.90 t/s, tg_3s =   1.89 t/s
+2026-10-27 15:48:40,807 | INFO    | llama-server | 6.58.510.274 I slot print_timing: id  0 | task 1125 | n_gen =    239, tg =   3.79 t/s, tg_3s =   1.66 t/s
+2026-10-27 15:48:43,851 | INFO    | llama-server | 7.01.553.372 I slot print_timing: id  0 | task 1125 | n_gen =    251, tg =   3.80 t/s, tg_3s =   3.94 t/s
+2026-10-27 15:48:46,878 | INFO    | llama-server | 7.04.581.082 I slot print_timing: id  0 | task 1125 | n_gen =    266, tg =   3.85 t/s, tg_3s =   4.95 t/s
+2026-10-27 15:48:49,880 | INFO    | llama-server | 7.07.584.058 I slot print_timing: id  0 | task 1125 | n_gen =    282, tg =   3.91 t/s, tg_3s =   5.33 t/s
+2026-10-27 15:48:52,951 | INFO    | llama-server | 7.10.658.316 I slot print_timing: id  0 | task 1125 | n_gen =    300, tg =   3.99 t/s, tg_3s =   5.86 t/s
+2026-10-27 15:48:55,983 | INFO    | llama-server | 7.13.686.408 I slot print_timing: id  0 | task 1125 | n_gen =    316, tg =   4.04 t/s, tg_3s =   5.28 t/s
+2026-10-27 15:48:59,152 | INFO    | llama-server | 7.16.856.257 I slot print_timing: id  0 | task 1125 | n_gen =    334, tg =   4.11 t/s, tg_3s =   5.68 t/s
+2026-10-27 15:49:02,255 | INFO    | llama-server | 7.19.958.187 I slot print_timing: id  0 | task 1125 | n_gen =    348, tg =   4.12 t/s, tg_3s =   4.51 t/s
+2026-10-27 15:49:05,357 | INFO    | llama-server | 7.23.061.908 I slot print_timing: id  0 | task 1125 | n_gen =    367, tg =   4.19 t/s, tg_3s =   6.12 t/s
+2026-10-27 15:49:08,439 | INFO    | llama-server | 7.26.142.404 I slot print_timing: id  0 | task 1125 | n_gen =    387, tg =   4.27 t/s, tg_3s =   6.49 t/s
+2026-10-27 15:49:11,599 | INFO    | llama-server | 7.29.302.308 I slot print_timing: id  0 | task 1125 | n_gen =    407, tg =   4.34 t/s, tg_3s =   6.33 t/s
+2026-10-27 15:49:14,622 | INFO    | llama-server | 7.32.325.306 I slot print_timing: id  0 | task 1125 | n_gen =    423, tg =   4.37 t/s, tg_3s =   5.29 t/s
+2026-10-27 15:49:17,638 | INFO    | llama-server | 7.35.341.343 I slot print_timing: id  0 | task 1125 | n_gen =    438, tg =   4.39 t/s, tg_3s =   4.97 t/s
+2026-10-27 15:49:20,688 | INFO    | llama-server | 7.38.391.752 I slot print_timing: id  0 | task 1125 | n_gen =    457, tg =   4.44 t/s, tg_3s =   6.23 t/s
+2026-10-27 15:49:22,261 | INFO    | llama-server | 7.39.966.141 I slot print_timing: id  0 | task 1125 | prompt eval time =   13795.02 ms /   246 tokens (   56.08 ms per token,    17.83 tokens per second)
+2026-10-27 15:49:22,261 | INFO    | llama-server | 7.39.966.154 I slot print_timing: id  0 | task 1125 |        eval time =  104195.71 ms /   465 tokens (  224.56 ms per token,     4.45 tokens per second)
+2026-10-27 15:49:22,261 | INFO    | llama-server | 7.39.966.158 I slot print_timing: id  0 | task 1125 |       total time =  117990.72 ms /   711 tokens
+2026-10-27 15:49:22,267 | INFO    | httpx2 | HTTP Request: POST http://127.0.0.1:8080/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-27 15:49:22,268 | INFO    | llama-server | 7.39.966.161 I slot print_timing: id  0 | task 1125 |    graphs reused =       1564
+2026-10-27 15:49:22,273 | INFO    | llama-server | 7.39.966.164 I slot print_timing: id  0 | task 1125 |   graph reallocs =          0    /     0        (same size) / (changed size)
+2026-10-27 15:49:22,273 | INFO    | llama-server | 7.39.967.619 I slot      release: id  0 | task 1125 | stop processing: n_tokens = 1965, truncated = 0
+2026-10-27 15:49:22,536 | INFO    | llama-server | 7.40.239.158 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.790 (> 0.100 thold), f_keep = 0.762
+2026-10-27 15:49:22,538 | INFO    | llama-server | 7.40.241.404 I slot launch_slot_: id  0 | task 1592 | processing task, is_child = 0
+2026-10-27 15:49:40,823 | INFO    | llama-server | 7.58.525.646 I slot print_timing: id  0 | task 1592 | prompt processing, n_tokens =    395, progress = 1.00, t =  18.28 s / 21.60 tokens per second
+2026-10-27 15:49:56,722 | INFO    | llama-server | 8.14.425.111 I slot print_timing: id  0 | task 1592 | n_gen =    100, tg =   6.36 t/s, tg_3s =   6.43 t/s
+2026-10-27 15:49:59,732 | INFO    | llama-server | 8.17.435.352 I slot print_timing: id  0 | task 1592 | n_gen =    119, tg =   6.35 t/s, tg_3s =   6.31 t/s
+2026-10-27 15:50:02,985 | INFO    | llama-server | 8.20.689.231 I slot print_timing: id  0 | task 1592 | n_gen =    137, tg =   6.23 t/s, tg_3s =   5.53 t/s
+2026-10-27 15:50:06,074 | INFO    | llama-server | 8.23.776.816 I slot print_timing: id  0 | task 1592 | n_gen =    151, tg =   6.02 t/s, tg_3s =   4.53 t/s
+2026-10-27 15:50:09,118 | INFO    | llama-server | 8.26.821.852 I slot print_timing: id  0 | task 1592 | n_gen =    170, tg =   6.04 t/s, tg_3s =   6.24 t/s
+2026-10-27 15:50:12,235 | INFO    | llama-server | 8.29.938.335 I slot print_timing: id  0 | task 1592 | n_gen =    190, tg =   6.08 t/s, tg_3s =   6.42 t/s
+2026-10-27 15:50:15,335 | INFO    | llama-server | 8.33.038.184 I slot print_timing: id  0 | task 1592 | n_gen =    204, tg =   5.94 t/s, tg_3s =   4.52 t/s
+2026-10-27 15:50:18,354 | INFO    | llama-server | 8.36.057.718 I slot print_timing: id  0 | task 1592 | n_gen =    221, tg =   5.91 t/s, tg_3s =   5.63 t/s
+2026-10-27 15:50:23,340 | INFO    | llama-server | 8.41.042.826 I slot print_timing: id  0 | task 1592 | n_gen =    225, tg =   5.31 t/s, tg_3s =   0.80 t/s
+2026-10-27 15:50:26,780 | INFO    | llama-server | 8.44.482.546 I slot print_timing: id  0 | task 1592 | n_gen =    226, tg =   4.93 t/s, tg_3s =   0.29 t/s
+2026-10-27 15:50:27,808 | INFO    | llama-server | 8.45.511.551 I slot print_timing: id  0 | task 1592 | prompt eval time =   18620.07 ms /   399 tokens (   46.67 ms per token,    21.43 tokens per second)
+2026-10-27 15:50:27,809 | INFO    | llama-server | 8.45.511.570 I slot print_timing: id  0 | task 1592 |        eval time =   46649.86 ms /   230 tokens (  203.71 ms per token,     4.91 tokens per second)
+2026-10-27 15:50:27,809 | INFO    | llama-server | 8.45.511.574 I slot print_timing: id  0 | task 1592 |       total time =   65269.93 ms /   629 tokens
+2026-10-27 15:50:27,809 | INFO    | llama-server | 8.45.511.627 I slot print_timing: id  0 | task 1592 |    graphs reused =       1791
+2026-10-27 15:50:27,809 | INFO    | httpx2 | HTTP Request: POST http://127.0.0.1:8080/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-27 15:50:27,809 | INFO    | llama-server | 8.45.511.636 I slot print_timing: id  0 | task 1592 |   graph reallocs =          0    /     0        (same size) / (changed size)
+2026-10-27 15:50:27,812 | INFO    | llama-server | 8.45.512.265 I slot      release: id  0 | task 1592 | stop processing: n_tokens = 2126, truncated = 0
+2026-10-27 15:50:27,945 | INFO    | llama-server | 8.45.648.092 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.970 (> 0.100 thold), f_keep = 0.891
+2026-10-27 15:50:27,948 | INFO    | llama-server | 8.45.648.809 I slot launch_slot_: id  0 | task 1824 | processing task, is_child = 0
+2026-10-27 15:50:47,292 | INFO    | llama-server | 9.04.995.244 I slot print_timing: id  0 | task 1824 | n_gen =    100, tg =   6.08 t/s, tg_3s =   6.14 t/s
+2026-10-27 15:50:50,440 | INFO    | llama-server | 9.08.142.765 I slot print_timing: id  0 | task 1824 | n_gen =    119, tg =   6.07 t/s, tg_3s =   6.04 t/s
+2026-10-27 15:50:53,445 | INFO    | llama-server | 9.11.148.669 I slot print_timing: id  0 | task 1824 | n_gen =    137, tg =   6.06 t/s, tg_3s =   5.99 t/s
+2026-10-27 15:50:56,526 | INFO    | llama-server | 9.14.228.735 I slot print_timing: id  0 | task 1824 | n_gen =    156, tg =   6.07 t/s, tg_3s =   6.17 t/s
+2026-10-27 15:50:59,657 | INFO    | llama-server | 9.17.361.425 I slot print_timing: id  0 | task 1824 | n_gen =    176, tg =   6.11 t/s, tg_3s =   6.38 t/s
+2026-10-27 15:51:03,869 | INFO    | llama-server | 9.21.572.696 I slot print_timing: id  0 | task 1824 | n_gen =    186, tg =   5.63 t/s, tg_3s =   2.37 t/s
+2026-10-27 15:51:06,884 | INFO    | llama-server | 9.24.587.769 I slot print_timing: id  0 | task 1824 | n_gen =    197, tg =   5.46 t/s, tg_3s =   3.65 t/s
+2026-10-27 15:51:10,063 | INFO    | llama-server | 9.27.765.676 I slot print_timing: id  0 | task 1824 | n_gen =    214, tg =   5.45 t/s, tg_3s =   5.35 t/s
+2026-10-27 15:51:13,166 | INFO    | llama-server | 9.30.869.173 I slot print_timing: id  0 | task 1824 | n_gen =    231, tg =   5.46 t/s, tg_3s =   5.48 t/s
+2026-10-27 15:51:15,015 | INFO    | llama-server | 9.32.718.509 I slot print_timing: id  0 | task 1824 | prompt eval time =    3060.49 ms /    59 tokens (   51.87 ms per token,    19.28 tokens per second)
+2026-10-27 15:51:15,016 | INFO    | httpx2 | HTTP Request: POST http://127.0.0.1:8080/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-27 15:51:15,016 | INFO    | llama-server | 9.32.718.525 I slot print_timing: id  0 | task 1824 |        eval time =   44009.03 ms /   238 tokens (  185.69 ms per token,     5.39 tokens per second)
+2026-10-27 15:51:15,020 | INFO    | llama-server | 9.32.718.528 I slot print_timing: id  0 | task 1824 |       total time =   47069.51 ms /   297 tokens
+2026-10-27 15:51:15,033 | INFO    | llama-server | 9.32.718.530 I slot print_timing: id  0 | task 1824 |    graphs reused =       2026
+2026-10-27 15:51:15,043 | INFO    | llama-server | 9.32.718.532 I slot print_timing: id  0 | task 1824 |   graph reallocs =          0    /     0        (same size) / (changed size)
+2026-10-27 15:51:15,044 | INFO    | llama-server | 9.32.718.836 I slot      release: id  0 | task 1824 | stop processing: n_tokens = 2190, truncated = 0
+2026-10-27 15:51:15,202 | INFO    | llama-server | 9.32.906.200 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.976 (> 0.100 thold), f_keep = 0.890
+2026-10-27 15:51:15,206 | INFO    | llama-server | 9.32.907.124 I slot launch_slot_: id  0 | task 2064 | processing task, is_child = 0
+2026-10-27 15:51:18,804 | INFO    | llama-server | 9.36.507.047 I slot print_timing: id  0 | task 2064 | prompt processing, n_tokens =     43, progress = 1.00, t =   3.60 s / 11.95 tokens per second
+2026-10-27 15:51:35,726 | INFO    | llama-server | 9.53.428.990 I slot print_timing: id  0 | task 2064 | n_gen =    100, tg =   5.95 t/s, tg_3s =   6.01 t/s
+2026-10-27 15:51:38,778 | INFO    | llama-server | 9.56.481.183 I slot print_timing: id  0 | task 2064 | n_gen =    114, tg =   5.74 t/s, tg_3s =   4.59 t/s
+2026-10-27 15:51:41,853 | INFO    | llama-server | 9.59.556.033 I slot print_timing: id  0 | task 2064 | n_gen =    132, tg =   5.76 t/s, tg_3s =   5.85 t/s
+2026-10-27 15:51:44,940 | INFO    | llama-server | 10.02.643.672 I slot print_timing: id  0 | task 2064 | n_gen =    152, tg =   5.84 t/s, tg_3s =   6.48 t/s
+2026-10-27 15:51:47,948 | INFO    | llama-server | 10.05.651.169 I slot print_timing: id  0 | task 2064 | n_gen =    171, tg =   5.89 t/s, tg_3s =   6.32 t/s
+2026-10-27 15:51:51,023 | INFO    | llama-server | 10.08.726.337 I slot print_timing: id  0 | task 2064 | n_gen =    191, tg =   5.95 t/s, tg_3s =   6.50 t/s
+2026-10-27 15:51:54,028 | INFO    | llama-server | 10.11.731.071 I slot print_timing: id  0 | task 2064 | n_gen =    209, tg =   5.96 t/s, tg_3s =   5.99 t/s
+2026-10-27 15:51:57,231 | INFO    | llama-server | 10.14.934.501 I slot print_timing: id  0 | task 2064 | n_gen =    229, tg =   5.98 t/s, tg_3s =   6.24 t/s
+2026-10-27 15:52:00,382 | INFO    | llama-server | 10.18.085.010 I slot print_timing: id  0 | task 2064 | n_gen =    249, tg =   6.01 t/s, tg_3s =   6.35 t/s
+2026-10-27 15:52:04,271 | INFO    | llama-server | 10.21.973.713 I slot print_timing: id  0 | task 2064 | n_gen =    260, tg =   5.73 t/s, tg_3s =   2.83 t/s
+2026-10-27 15:52:07,348 | INFO    | llama-server | 10.25.050.700 I slot print_timing: id  0 | task 2064 | n_gen =    275, tg =   5.68 t/s, tg_3s =   4.87 t/s
+2026-10-27 15:52:10,485 | INFO    | llama-server | 10.28.188.196 I slot print_timing: id  0 | task 2064 | n_gen =    294, tg =   5.70 t/s, tg_3s =   6.06 t/s
+2026-10-27 15:52:13,528 | INFO    | llama-server | 10.31.230.700 I slot print_timing: id  0 | task 2064 | n_gen =    313, tg =   5.73 t/s, tg_3s =   6.24 t/s
+2026-10-27 15:52:16,597 | INFO    | llama-server | 10.34.300.298 I slot print_timing: id  0 | task 2064 | n_gen =    327, tg =   5.67 t/s, tg_3s =   4.56 t/s
+2026-10-27 15:52:19,700 | INFO    | llama-server | 10.37.403.199 I slot print_timing: id  0 | task 2064 | n_gen =    347, tg =   5.71 t/s, tg_3s =   6.45 t/s
+2026-10-27 15:52:22,809 | INFO    | llama-server | 10.40.512.136 I slot print_timing: id  0 | task 2064 | n_gen =    364, tg =   5.70 t/s, tg_3s =   5.47 t/s
+2026-10-27 15:52:25,854 | INFO    | llama-server | 10.43.556.788 I slot print_timing: id  0 | task 2064 | n_gen =    384, tg =   5.74 t/s, tg_3s =   6.57 t/s
+2026-10-27 15:52:28,887 | INFO    | llama-server | 10.46.589.814 I slot print_timing: id  0 | task 2064 | n_gen =    402, tg =   5.75 t/s, tg_3s =   5.93 t/s
+2026-10-27 15:52:31,937 | INFO    | llama-server | 10.49.640.439 I slot print_timing: id  0 | task 2064 | n_gen =    421, tg =   5.77 t/s, tg_3s =   6.23 t/s
+2026-10-27 15:52:34,953 | INFO    | llama-server | 10.52.655.600 I slot print_timing: id  0 | task 2064 | n_gen =    437, tg =   5.75 t/s, tg_3s =   5.31 t/s
+2026-10-27 15:52:38,112 | INFO    | llama-server | 10.55.815.193 I slot print_timing: id  0 | task 2064 | n_gen =    452, tg =   5.71 t/s, tg_3s =   4.75 t/s
+2026-10-27 15:52:41,160 | INFO    | llama-server | 10.58.864.436 I slot print_timing: id  0 | task 2064 | n_gen =    466, tg =   5.67 t/s, tg_3s =   4.59 t/s
+2026-10-27 15:52:44,275 | INFO    | llama-server | 11.01.978.607 I slot print_timing: id  0 | task 2064 | n_gen =    483, tg =   5.66 t/s, tg_3s =   5.46 t/s
+2026-10-27 15:52:47,365 | INFO    | llama-server | 11.05.069.015 I slot print_timing: id  0 | task 2064 | n_gen =    502, tg =   5.68 t/s, tg_3s =   6.15 t/s
+2026-10-27 15:52:50,431 | INFO    | llama-server | 11.08.134.030 I slot print_timing: id  0 | task 2064 | n_gen =    521, tg =   5.69 t/s, tg_3s =   6.20 t/s
+2026-10-27 15:52:53,469 | INFO    | llama-server | 11.11.172.378 I slot print_timing: id  0 | task 2064 | n_gen =    540, tg =   5.71 t/s, tg_3s =   6.25 t/s
+2026-10-27 15:52:56,542 | INFO    | llama-server | 11.14.245.338 I slot print_timing: id  0 | task 2064 | n_gen =    559, tg =   5.73 t/s, tg_3s =   6.18 t/s
+2026-10-27 15:52:59,662 | INFO    | llama-server | 11.17.364.849 I slot print_timing: id  0 | task 2064 | n_gen =    578, tg =   5.74 t/s, tg_3s =   6.09 t/s
+2026-10-27 15:53:04,206 | INFO    | llama-server | 11.21.910.125 I slot print_timing: id  0 | task 2064 | n_gen =    591, tg =   5.61 t/s, tg_3s =   2.86 t/s
+2026-10-27 15:53:07,208 | INFO    | llama-server | 11.24.910.892 I slot print_timing: id  0 | task 2064 | n_gen =    603, tg =   5.57 t/s, tg_3s =   4.00 t/s
+2026-10-27 15:53:10,213 | INFO    | llama-server | 11.27.916.516 I slot print_timing: id  0 | task 2064 | n_gen =    612, tg =   5.50 t/s, tg_3s =   2.99 t/s
+2026-10-27 15:53:13,294 | INFO    | llama-server | 11.30.996.719 I slot print_timing: id  0 | task 2064 | n_gen =    627, tg =   5.48 t/s, tg_3s =   4.87 t/s
+2026-10-27 15:53:16,428 | INFO    | llama-server | 11.34.130.832 I slot print_timing: id  0 | task 2064 | n_gen =    640, tg =   5.45 t/s, tg_3s =   4.15 t/s
+2026-10-27 15:53:19,550 | INFO    | llama-server | 11.37.253.324 I slot print_timing: id  0 | task 2064 | n_gen =    657, tg =   5.45 t/s, tg_3s =   5.44 t/s
+2026-10-27 15:53:22,675 | INFO    | llama-server | 11.40.378.108 I slot print_timing: id  0 | task 2064 | n_gen =    670, tg =   5.41 t/s, tg_3s =   4.16 t/s
+2026-10-27 15:53:25,701 | INFO    | llama-server | 11.43.405.174 I slot print_timing: id  0 | task 2064 | n_gen =    683, tg =   5.39 t/s, tg_3s =   4.29 t/s
+2026-10-27 15:53:28,874 | INFO    | llama-server | 11.46.576.998 I slot print_timing: id  0 | task 2064 | n_gen =    699, tg =   5.38 t/s, tg_3s =   5.04 t/s
+2026-10-27 15:53:32,095 | INFO    | llama-server | 11.49.798.216 I slot print_timing: id  0 | task 2064 | n_gen =    718, tg =   5.39 t/s, tg_3s =   5.90 t/s
+2026-10-27 15:53:35,148 | INFO    | llama-server | 11.52.851.732 I slot print_timing: id  0 | task 2064 | n_gen =    732, tg =   5.37 t/s, tg_3s =   4.58 t/s
+2026-10-27 15:53:38,226 | INFO    | llama-server | 11.55.929.551 I slot print_timing: id  0 | task 2064 | n_gen =    750, tg =   5.38 t/s, tg_3s =   5.85 t/s
+2026-10-27 15:53:41,306 | INFO    | llama-server | 11.59.010.090 I slot print_timing: id  0 | task 2064 | n_gen =    768, tg =   5.39 t/s, tg_3s =   5.84 t/s
+2026-10-27 15:53:44,313 | INFO    | llama-server | 12.02.015.943 I slot print_timing: id  0 | task 2064 | n_gen =    786, tg =   5.41 t/s, tg_3s =   5.99 t/s
+2026-10-27 15:53:47,408 | INFO    | llama-server | 12.05.110.864 I slot print_timing: id  0 | task 2064 | n_gen =    802, tg =   5.40 t/s, tg_3s =   5.17 t/s
+2026-10-27 15:53:50,527 | INFO    | llama-server | 12.08.230.222 I slot print_timing: id  0 | task 2064 | n_gen =    817, tg =   5.39 t/s, tg_3s =   4.81 t/s
+2026-10-27 15:53:53,548 | INFO    | llama-server | 12.11.251.172 I slot print_timing: id  0 | task 2064 | n_gen =    832, tg =   5.38 t/s, tg_3s =   4.97 t/s
+2026-10-27 15:53:56,659 | INFO    | llama-server | 12.14.362.387 I slot print_timing: id  0 | task 2064 | n_gen =    849, tg =   5.38 t/s, tg_3s =   5.46 t/s
+2026-10-27 15:53:59,726 | INFO    | llama-server | 12.17.429.748 I slot print_timing: id  0 | task 2064 | n_gen =    864, tg =   5.37 t/s, tg_3s =   4.89 t/s
+2026-10-27 15:54:03,259 | INFO    | llama-server | 12.20.962.841 I slot print_timing: id  0 | task 2064 | n_gen =    880, tg =   5.35 t/s, tg_3s =   4.53 t/s
+2026-10-27 15:54:06,295 | INFO    | llama-server | 12.23.998.172 I slot print_timing: id  0 | task 2064 | n_gen =    891, tg =   5.32 t/s, tg_3s =   3.62 t/s
+2026-10-27 15:54:09,344 | INFO    | llama-server | 12.27.047.238 I slot print_timing: id  0 | task 2064 | n_gen =    905, tg =   5.31 t/s, tg_3s =   4.59 t/s
+2026-10-27 15:54:12,438 | INFO    | llama-server | 12.30.140.975 I slot print_timing: id  0 | task 2064 | n_gen =    921, tg =   5.31 t/s, tg_3s =   5.17 t/s
+2026-10-27 15:54:15,563 | INFO    | llama-server | 12.33.267.413 I slot print_timing: id  0 | task 2064 | n_gen =    936, tg =   5.30 t/s, tg_3s =   4.80 t/s
+2026-10-27 15:54:18,671 | INFO    | llama-server | 12.36.373.896 I slot print_timing: id  0 | task 2064 | n_gen =    955, tg =   5.31 t/s, tg_3s =   6.12 t/s
+2026-10-27 15:54:21,701 | INFO    | llama-server | 12.39.404.753 I slot print_timing: id  0 | task 2064 | n_gen =    973, tg =   5.32 t/s, tg_3s =   5.94 t/s
+2026-10-27 15:54:24,756 | INFO    | llama-server | 12.42.462.196 I slot print_timing: id  0 | task 2064 | n_gen =    990, tg =   5.33 t/s, tg_3s =   5.56 t/s
+2026-10-27 15:54:27,817 | INFO    | llama-server | 12.45.520.705 I slot print_timing: id  0 | task 2064 | n_gen =   1008, tg =   5.34 t/s, tg_3s =   5.89 t/s
+2026-10-27 15:54:30,975 | INFO    | llama-server | 12.48.678.195 I slot print_timing: id  0 | task 2064 | n_gen =   1027, tg =   5.35 t/s, tg_3s =   6.02 t/s
+2026-10-27 15:54:34,021 | INFO    | llama-server | 12.51.724.660 I slot print_timing: id  0 | task 2064 | n_gen =   1040, tg =   5.33 t/s, tg_3s =   4.27 t/s
+2026-10-27 15:54:37,222 | INFO    | llama-server | 12.54.924.707 I slot print_timing: id  0 | task 2064 | n_gen =   1056, tg =   5.33 t/s, tg_3s =   5.00 t/s
+2026-10-27 15:54:40,298 | INFO    | llama-server | 12.58.001.253 I slot print_timing: id  0 | task 2064 | n_gen =   1074, tg =   5.33 t/s, tg_3s =   5.85 t/s
+2026-10-27 15:54:43,445 | INFO    | llama-server | 13.01.148.509 I slot print_timing: id  0 | task 2064 | n_gen =   1093, tg =   5.34 t/s, tg_3s =   6.04 t/s
+2026-10-27 15:54:46,605 | INFO    | llama-server | 13.04.308.001 I slot print_timing: id  0 | task 2064 | n_gen =   1111, tg =   5.35 t/s, tg_3s =   5.70 t/s
+2026-10-27 15:54:49,646 | INFO    | llama-server | 13.07.348.547 I slot print_timing: id  0 | task 2064 | n_gen =   1129, tg =   5.36 t/s, tg_3s =   5.92 t/s
+2026-10-27 15:54:52,704 | INFO    | llama-server | 13.10.410.717 I slot print_timing: id  0 | task 2064 | n_gen =   1148, tg =   5.37 t/s, tg_3s =   6.20 t/s
+2026-10-27 15:54:55,798 | INFO    | llama-server | 13.13.501.861 I slot print_timing: id  0 | task 2064 | n_gen =   1167, tg =   5.38 t/s, tg_3s =   6.15 t/s
+2026-10-27 15:54:58,836 | INFO    | llama-server | 13.16.539.831 I slot print_timing: id  0 | task 2064 | n_gen =   1185, tg =   5.39 t/s, tg_3s =   5.93 t/s
+2026-10-27 15:55:01,960 | INFO    | llama-server | 13.19.663.763 I slot print_timing: id  0 | task 2064 | n_gen =   1204, tg =   5.40 t/s, tg_3s =   6.08 t/s
+2026-10-27 15:55:05,136 | INFO    | llama-server | 13.22.838.962 I slot print_timing: id  0 | task 2064 | n_gen =   1213, tg =   5.36 t/s, tg_3s =   2.83 t/s
+2026-10-27 15:55:08,145 | INFO    | llama-server | 13.25.848.111 I slot print_timing: id  0 | task 2064 | n_gen =   1230, tg =   5.37 t/s, tg_3s =   5.65 t/s
+2026-10-27 15:55:11,201 | INFO    | llama-server | 13.28.905.093 I slot print_timing: id  0 | task 2064 | n_gen =   1245, tg =   5.36 t/s, tg_3s =   4.91 t/s
+2026-10-27 15:55:14,303 | INFO    | llama-server | 13.32.006.527 I slot print_timing: id  0 | task 2064 | n_gen =   1261, tg =   5.36 t/s, tg_3s =   5.16 t/s
+2026-10-27 15:55:17,332 | INFO    | llama-server | 13.35.035.294 I slot print_timing: id  0 | task 2064 | n_gen =   1277, tg =   5.36 t/s, tg_3s =   5.28 t/s
+2026-10-27 15:55:20,446 | INFO    | llama-server | 13.38.149.919 I slot print_timing: id  0 | task 2064 | n_gen =   1295, tg =   5.36 t/s, tg_3s =   5.78 t/s
+2026-10-27 15:55:23,492 | INFO    | llama-server | 13.41.194.761 I slot print_timing: id  0 | task 2064 | n_gen =   1311, tg =   5.36 t/s, tg_3s =   5.25 t/s
+2026-10-27 15:55:26,492 | INFO    | llama-server | 13.44.195.812 I slot print_timing: id  0 | task 2064 | n_gen =   1327, tg =   5.36 t/s, tg_3s =   5.33 t/s
+2026-10-27 15:55:29,510 | INFO    | llama-server | 13.47.214.620 I slot print_timing: id  0 | task 2064 | n_gen =   1345, tg =   5.37 t/s, tg_3s =   5.96 t/s
+2026-10-27 15:55:32,564 | INFO    | llama-server | 13.50.267.490 I slot print_timing: id  0 | task 2064 | n_gen =   1363, tg =   5.37 t/s, tg_3s =   5.90 t/s
+2026-10-27 15:55:35,583 | INFO    | llama-server | 13.53.286.471 I slot print_timing: id  0 | task 2064 | n_gen =   1378, tg =   5.37 t/s, tg_3s =   4.97 t/s
+2026-10-27 15:55:38,702 | INFO    | llama-server | 13.56.404.910 I slot print_timing: id  0 | task 2064 | n_gen =   1396, tg =   5.37 t/s, tg_3s =   5.77 t/s
+2026-10-27 15:55:41,847 | INFO    | llama-server | 13.59.550.302 I slot print_timing: id  0 | task 2064 | n_gen =   1412, tg =   5.37 t/s, tg_3s =   5.09 t/s
+2026-10-27 15:55:45,005 | INFO    | llama-server | 14.02.708.549 I slot print_timing: id  0 | task 2064 | n_gen =   1430, tg =   5.37 t/s, tg_3s =   5.70 t/s
+2026-10-27 15:55:48,042 | INFO    | llama-server | 14.05.745.077 I slot print_timing: id  0 | task 2064 | n_gen =   1448, tg =   5.38 t/s, tg_3s =   5.93 t/s
+2026-10-27 15:55:51,177 | INFO    | llama-server | 14.08.880.536 I slot print_timing: id  0 | task 2064 | n_gen =   1467, tg =   5.39 t/s, tg_3s =   6.06 t/s
+2026-10-27 15:55:54,330 | INFO    | llama-server | 14.12.032.682 I slot print_timing: id  0 | task 2064 | n_gen =   1485, tg =   5.39 t/s, tg_3s =   5.71 t/s
+2026-10-27 15:55:54,931 | INFO    | llama-server | 14.12.634.549 I slot print_timing: id  0 | task 2064 | prompt eval time =    3896.57 ms /    47 tokens (   82.91 ms per token,    12.06 tokens per second)
+2026-10-27 15:55:54,932 | INFO    | llama-server | 14.12.634.568 I slot print_timing: id  0 | task 2064 |        eval time =  275830.34 ms /  1488 tokens (  185.49 ms per token,     5.39 tokens per second)
+2026-10-27 15:55:54,932 | INFO    | llama-server | 14.12.634.572 I slot print_timing: id  0 | task 2064 |       total time =  279726.91 ms /  1535 tokens
+2026-10-27 15:55:54,933 | INFO    | llama-server | 14.12.634.575 I slot print_timing: id  0 | task 2064 |    graphs reused =       3506
+2026-10-27 15:55:54,933 | INFO    | llama-server | 14.12.634.578 I slot print_timing: id  0 | task 2064 |   graph reallocs =          0    /     0        (same size) / (changed size)
+2026-10-27 15:55:54,933 | INFO    | llama-server | 14.12.636.137 I slot      release: id  0 | task 2064 | stop processing: n_tokens = 3484, truncated = 0
+2026-10-27 15:55:54,935 | INFO    | httpx2 | HTTP Request: POST http://127.0.0.1:8080/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-27 15:55:55,295 | INFO    | llama-server | 14.12.997.984 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.608 (> 0.100 thold), f_keep = 0.572
+2026-10-27 15:55:55,296 | INFO    | llama-server | 14.12.998.906 I slot launch_slot_: id  0 | task 3554 | processing task, is_child = 0
+2026-10-27 15:56:30,243 | INFO    | llama-server | 14.47.945.561 I slot print_timing: id  0 | task 3554 | prompt processing, n_tokens =    767, progress = 0.84, t =  34.95 s / 21.95 tokens per second
+2026-10-27 15:56:49,789 | INFO    | llama-server | 15.07.492.717 I slot print_timing: id  0 | task 3554 | prompt processing, n_tokens =   1279, progress = 1.00, t =  54.49 s / 23.47 tokens per second
+2026-10-27 15:57:08,531 | INFO    | llama-server | 15.26.234.055 I slot print_timing: id  0 | task 3554 | n_gen =    100, tg =   5.41 t/s, tg_3s =   5.47 t/s
+2026-10-27 15:57:11,674 | INFO    | llama-server | 15.29.376.664 I slot print_timing: id  0 | task 3554 | n_gen =    119, tg =   5.51 t/s, tg_3s =   6.05 t/s
+2026-10-27 15:57:14,842 | INFO    | llama-server | 15.32.545.220 I slot print_timing: id  0 | task 3554 | n_gen =    132, tg =   5.33 t/s, tg_3s =   4.10 t/s
+2026-10-27 15:57:17,849 | INFO    | llama-server | 15.35.552.360 I slot print_timing: id  0 | task 3554 | n_gen =    149, tg =   5.36 t/s, tg_3s =   5.65 t/s
+2026-10-27 15:57:21,010 | INFO    | llama-server | 15.38.713.042 I slot print_timing: id  0 | task 3554 | n_gen =    168, tg =   5.43 t/s, tg_3s =   6.01 t/s
+2026-10-27 15:57:24,144 | INFO    | llama-server | 15.41.846.969 I slot print_timing: id  0 | task 3554 | n_gen =    186, tg =   5.46 t/s, tg_3s =   5.74 t/s
+2026-10-27 15:57:27,195 | INFO    | llama-server | 15.44.898.176 I slot print_timing: id  0 | task 3554 | n_gen =    202, tg =   5.44 t/s, tg_3s =   5.24 t/s
+2026-10-27 15:57:30,329 | INFO    | llama-server | 15.48.032.272 I slot print_timing: id  0 | task 3554 | n_gen =    219, tg =   5.44 t/s, tg_3s =   5.42 t/s
+2026-10-27 15:57:33,481 | INFO    | llama-server | 15.51.184.191 I slot print_timing: id  0 | task 3554 | n_gen =    238, tg =   5.48 t/s, tg_3s =   6.03 t/s
+2026-10-27 15:57:36,564 | INFO    | llama-server | 15.54.267.726 I slot print_timing: id  0 | task 3554 | n_gen =    255, tg =   5.48 t/s, tg_3s =   5.51 t/s
+2026-10-27 15:57:39,671 | INFO    | llama-server | 15.57.374.779 I slot print_timing: id  0 | task 3554 | n_gen =    274, tg =   5.52 t/s, tg_3s =   6.12 t/s
+2026-10-27 15:57:42,754 | INFO    | llama-server | 16.00.457.731 I slot print_timing: id  0 | task 3554 | n_gen =    293, tg =   5.56 t/s, tg_3s =   6.16 t/s
+2026-10-27 15:57:45,865 | INFO    | llama-server | 16.03.568.633 I slot print_timing: id  0 | task 3554 | n_gen =    312, tg =   5.59 t/s, tg_3s =   6.11 t/s
+2026-10-27 15:57:48,939 | INFO    | llama-server | 16.06.641.998 I slot print_timing: id  0 | task 3554 | n_gen =    330, tg =   5.61 t/s, tg_3s =   5.86 t/s
+2026-10-27 15:57:52,106 | INFO    | llama-server | 16.09.809.074 I slot print_timing: id  0 | task 3554 | n_gen =    349, tg =   5.63 t/s, tg_3s =   6.00 t/s
+2026-10-27 15:57:55,131 | INFO    | llama-server | 16.12.834.671 I slot print_timing: id  0 | task 3554 | n_gen =    367, tg =   5.64 t/s, tg_3s =   5.95 t/s
+2026-10-27 15:57:59,129 | INFO    | llama-server | 16.16.832.557 I slot print_timing: id  0 | task 3554 | n_gen =    380, tg =   5.50 t/s, tg_3s =   3.25 t/s
+2026-10-27 15:58:02,180 | INFO    | llama-server | 16.19.884.304 I slot print_timing: id  0 | task 3554 | n_gen =    396, tg =   5.49 t/s, tg_3s =   5.24 t/s
+2026-10-27 15:58:05,277 | INFO    | llama-server | 16.22.980.880 I slot print_timing: id  0 | task 3554 | n_gen =    414, tg =   5.50 t/s, tg_3s =   5.81 t/s
+2026-10-27 15:58:08,386 | INFO    | llama-server | 16.26.088.960 I slot print_timing: id  0 | task 3554 | n_gen =    432, tg =   5.52 t/s, tg_3s =   5.79 t/s
+2026-10-27 15:58:11,491 | INFO    | llama-server | 16.29.194.170 I slot print_timing: id  0 | task 3554 | n_gen =    448, tg =   5.50 t/s, tg_3s =   5.15 t/s
+2026-10-27 15:58:14,769 | INFO    | llama-server | 16.32.471.997 I slot print_timing: id  0 | task 3554 | n_gen =    462, tg =   5.45 t/s, tg_3s =   4.27 t/s
+2026-10-27 15:58:17,795 | INFO    | llama-server | 16.35.497.776 I slot print_timing: id  0 | task 3554 | n_gen =    474, tg =   5.40 t/s, tg_3s =   3.97 t/s
+2026-10-27 15:58:20,817 | INFO    | llama-server | 16.38.519.957 I slot print_timing: id  0 | task 3554 | n_gen =    492, tg =   5.42 t/s, tg_3s =   5.96 t/s
+2026-10-27 15:58:23,956 | INFO    | llama-server | 16.41.659.702 I slot print_timing: id  0 | task 3554 | n_gen =    510, tg =   5.43 t/s, tg_3s =   5.73 t/s
+2026-10-27 15:58:27,402 | INFO    | llama-server | 16.45.106.115 I slot print_timing: id  0 | task 3554 | n_gen =    529, tg =   5.43 t/s, tg_3s =   5.51 t/s
+2026-10-27 15:58:30,410 | INFO    | llama-server | 16.48.113.557 I slot print_timing: id  0 | task 3554 | n_gen =    545, tg =   5.43 t/s, tg_3s =   5.32 t/s
+2026-10-27 15:58:33,464 | INFO    | llama-server | 16.51.167.521 I slot print_timing: id  0 | task 3554 | n_gen =    563, tg =   5.44 t/s, tg_3s =   5.89 t/s
+2026-10-27 15:58:36,487 | INFO    | llama-server | 16.54.190.872 I slot print_timing: id  0 | task 3554 | n_gen =    580, tg =   5.45 t/s, tg_3s =   5.62 t/s
+2026-10-27 15:58:39,627 | INFO    | llama-server | 16.57.329.980 I slot print_timing: id  0 | task 3554 | n_gen =    599, tg =   5.47 t/s, tg_3s =   6.05 t/s
+2026-10-27 15:58:42,640 | INFO    | llama-server | 17.00.343.693 I slot print_timing: id  0 | task 3554 | n_gen =    617, tg =   5.48 t/s, tg_3s =   5.97 t/s
+2026-10-27 15:58:45,175 | INFO    | llama-server | 17.02.877.500 I slot print_timing: id  0 | task 3554 | prompt eval time =   54951.32 ms /  1283 tokens (   42.83 ms per token,    23.35 tokens per second)
+2026-10-27 15:58:45,175 | INFO    | llama-server | 17.02.877.519 I slot print_timing: id  0 | task 3554 |        eval time =  114926.94 ms /   631 tokens (  182.42 ms per token,     5.48 tokens per second)
+2026-10-27 15:58:45,175 | INFO    | llama-server | 17.02.877.528 I slot print_timing: id  0 | task 3554 |       total time =  169878.26 ms /  1914 tokens
+2026-10-27 15:58:45,176 | INFO    | llama-server | 17.02.877.572 I slot print_timing: id  0 | task 3554 |    graphs reused =       4132
+2026-10-27 15:58:45,176 | INFO    | llama-server | 17.02.877.580 I slot print_timing: id  0 | task 3554 |   graph reallocs =          0    /     0        (same size) / (changed size)
+2026-10-27 15:58:45,178 | INFO    | httpx2 | HTTP Request: POST http://127.0.0.1:8080/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-27 15:58:45,179 | INFO    | llama-server | 17.02.878.083 I slot      release: id  0 | task 3554 | stop processing: n_tokens = 3907, truncated = 0
+2026-10-27 15:58:45,369 | INFO    | llama-server | 17.03.073.105 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.935 (> 0.100 thold), f_keep = 0.838
+2026-10-27 15:58:45,372 | INFO    | llama-server | 17.03.074.015 I slot launch_slot_: id  0 | task 4188 | processing task, is_child = 0
+2026-10-27 15:58:56,825 | INFO    | llama-server | 17.14.528.110 I slot print_timing: id  0 | task 4188 | prompt processing, n_tokens =    224, progress = 1.00, t =  11.45 s / 19.56 tokens per second
+2026-10-27 15:59:13,558 | INFO    | llama-server | 17.31.261.436 I slot print_timing: id  0 | task 4188 | n_gen =    100, tg =   6.02 t/s, tg_3s =   6.09 t/s
+2026-10-27 15:59:16,752 | INFO    | llama-server | 17.34.455.273 I slot print_timing: id  0 | task 4188 | n_gen =    113, tg =   5.71 t/s, tg_3s =   4.07 t/s
+2026-10-27 15:59:19,925 | INFO    | llama-server | 17.37.627.850 I slot print_timing: id  0 | task 4188 | n_gen =    131, tg =   5.70 t/s, tg_3s =   5.67 t/s
+2026-10-27 15:59:23,534 | INFO    | llama-server | 17.41.236.917 I slot print_timing: id  0 | task 4188 | n_gen =    148, tg =   5.57 t/s, tg_3s =   4.71 t/s
+2026-10-27 15:59:26,540 | INFO    | llama-server | 17.44.242.721 I slot print_timing: id  0 | task 4188 | n_gen =    157, tg =   5.30 t/s, tg_3s =   2.99 t/s
+2026-10-27 15:59:29,630 | INFO    | llama-server | 17.47.334.055 I slot print_timing: id  0 | task 4188 | n_gen =    172, tg =   5.26 t/s, tg_3s =   4.85 t/s
+2026-10-27 15:59:32,735 | INFO    | llama-server | 17.50.438.517 I slot print_timing: id  0 | task 4188 | n_gen =    188, tg =   5.25 t/s, tg_3s =   5.15 t/s
+2026-10-27 15:59:37,003 | INFO    | llama-server | 17.54.706.203 I slot print_timing: id  0 | task 4188 | n_gen =    197, tg =   4.92 t/s, tg_3s =   2.11 t/s
+2026-10-27 15:59:40,181 | INFO    | llama-server | 17.57.883.694 I slot print_timing: id  0 | task 4188 | n_gen =    202, tg =   4.67 t/s, tg_3s =   1.57 t/s
+2026-10-27 15:59:43,225 | INFO    | llama-server | 18.00.928.855 I slot print_timing: id  0 | task 4188 | n_gen =    218, tg =   4.71 t/s, tg_3s =   5.25 t/s
+2026-10-27 15:59:46,388 | INFO    | llama-server | 18.04.090.789 I slot print_timing: id  0 | task 4188 | n_gen =    235, tg =   4.75 t/s, tg_3s =   5.38 t/s
+2026-10-27 15:59:49,531 | INFO    | llama-server | 18.07.234.327 I slot print_timing: id  0 | task 4188 | n_gen =    239, tg =   4.54 t/s, tg_3s =   1.27 t/s
+2026-10-27 15:59:52,556 | INFO    | llama-server | 18.10.259.702 I slot print_timing: id  0 | task 4188 | n_gen =    255, tg =   4.58 t/s, tg_3s =   5.29 t/s
+2026-10-27 15:59:55,132 | INFO    | llama-server | 18.12.831.403 I slot print_timing: id  0 | task 4188 | prompt eval time =   11754.87 ms /   228 tokens (   51.56 ms per token,    19.40 tokens per second)
+2026-10-27 15:59:55,132 | INFO    | llama-server | 18.12.831.422 I slot print_timing: id  0 | task 4188 |        eval time =   58002.34 ms /   269 tokens (  216.43 ms per token,     4.62 tokens per second)
+2026-10-27 15:59:55,133 | INFO    | llama-server | 18.12.831.426 I slot print_timing: id  0 | task 4188 |       total time =   69757.21 ms /   497 tokens
+2026-10-27 15:59:55,133 | INFO    | llama-server | 18.12.831.430 I slot print_timing: id  0 | task 4188 |    graphs reused =       4398
+2026-10-27 15:59:55,133 | INFO    | llama-server | 18.12.831.432 I slot print_timing: id  0 | task 4188 |   graph reallocs =          0    /     0        (same size) / (changed size)
+2026-10-27 15:59:55,134 | INFO    | llama-server | 18.12.836.496 I slot      release: id  0 | task 4188 | stop processing: n_tokens = 3770, truncated = 0
+2026-10-27 15:59:55,134 | INFO    | httpx2 | HTTP Request: POST http://127.0.0.1:8080/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-27 15:59:55,358 | INFO    | llama-server | 18.13.062.462 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.987 (> 0.100 thold), f_keep = 0.928
+2026-10-27 15:59:55,360 | INFO    | llama-server | 18.13.063.079 I slot launch_slot_: id  0 | task 4459 | processing task, is_child = 0
+2026-10-27 16:00:16,961 | INFO    | llama-server | 18.34.664.685 I slot print_timing: id  0 | task 4459 | n_gen =    100, tg =   5.29 t/s, tg_3s =   5.35 t/s
+2026-10-27 16:00:22,354 | INFO    | llama-server | 18.40.057.438 I slot print_timing: id  0 | task 4459 | n_gen =    109, tg =   4.48 t/s, tg_3s =   1.67 t/s
+2026-10-27 16:00:25,525 | INFO    | llama-server | 18.43.228.405 I slot print_timing: id  0 | task 4459 | n_gen =    117, tg =   4.25 t/s, tg_3s =   2.52 t/s
+2026-10-27 16:00:28,593 | INFO    | llama-server | 18.46.296.070 I slot print_timing: id  0 | task 4459 | n_gen =    133, tg =   4.35 t/s, tg_3s =   5.22 t/s
+2026-10-27 16:00:31,805 | INFO    | llama-server | 18.49.509.388 I slot print_timing: id  0 | task 4459 | n_gen =    150, tg =   4.44 t/s, tg_3s =   5.29 t/s
+2026-10-27 16:00:34,808 | INFO    | llama-server | 18.52.512.319 I slot print_timing: id  0 | task 4459 | n_gen =    164, tg =   4.46 t/s, tg_3s =   4.66 t/s
+2026-10-27 16:00:38,041 | INFO    | llama-server | 18.55.744.285 I slot print_timing: id  0 | task 4459 | n_gen =    179, tg =   4.47 t/s, tg_3s =   4.64 t/s
+2026-10-27 16:00:41,166 | INFO    | llama-server | 18.58.869.736 I slot print_timing: id  0 | task 4459 | n_gen =    192, tg =   4.45 t/s, tg_3s =   4.16 t/s
+2026-10-27 16:00:44,359 | INFO    | llama-server | 19.02.062.087 I slot print_timing: id  0 | task 4459 | n_gen =    204, tg =   4.40 t/s, tg_3s =   3.76 t/s
+2026-10-27 16:00:47,988 | INFO    | llama-server | 19.05.690.594 I slot print_timing: id  0 | task 4459 | n_gen =    219, tg =   4.38 t/s, tg_3s =   4.13 t/s
+2026-10-27 16:00:51,136 | INFO    | llama-server | 19.08.839.084 I slot print_timing: id  0 | task 4459 | n_gen =    228, tg =   4.29 t/s, tg_3s =   2.86 t/s
+2026-10-27 16:00:54,171 | INFO    | llama-server | 19.11.874.445 I slot print_timing: id  0 | task 4459 | n_gen =    241, tg =   4.29 t/s, tg_3s =   4.28 t/s
+2026-10-27 16:00:57,233 | INFO    | llama-server | 19.14.937.568 I slot print_timing: id  0 | task 4459 | n_gen =    251, tg =   4.24 t/s, tg_3s =   3.26 t/s
+2026-10-27 16:01:00,426 | INFO    | llama-server | 19.18.129.438 I slot print_timing: id  0 | task 4459 | n_gen =    263, tg =   4.21 t/s, tg_3s =   3.76 t/s
+2026-10-27 16:01:04,379 | INFO    | llama-server | 19.22.082.274 I slot print_timing: id  0 | task 4459 | n_gen =    268, tg =   4.04 t/s, tg_3s =   1.26 t/s
+2026-10-27 16:01:08,771 | INFO    | llama-server | 19.26.474.373 I slot print_timing: id  0 | task 4459 | n_gen =    270, tg =   3.81 t/s, tg_3s =   0.46 t/s
+2026-10-27 16:01:12,125 | INFO    | llama-server | 19.29.828.648 I slot print_timing: id  0 | task 4459 | n_gen =    272, tg =   3.67 t/s, tg_3s =   0.60 t/s
+2026-10-27 16:01:15,799 | INFO    | llama-server | 19.33.502.794 I slot print_timing: id  0 | task 4459 | n_gen =    278, tg =   3.57 t/s, tg_3s =   1.63 t/s
+2026-10-27 16:01:18,887 | INFO    | llama-server | 19.36.590.023 I slot print_timing: id  0 | task 4459 | n_gen =    291, tg =   3.60 t/s, tg_3s =   4.21 t/s
+2026-10-27 16:01:21,928 | INFO    | llama-server | 19.39.631.063 I slot print_timing: id  0 | task 4459 | n_gen =    301, tg =   3.59 t/s, tg_3s =   3.29 t/s
+2026-10-27 16:01:25,061 | INFO    | llama-server | 19.42.764.494 I slot print_timing: id  0 | task 4459 | n_gen =    315, tg =   3.62 t/s, tg_3s =   4.47 t/s
+2026-10-27 16:01:28,257 | INFO    | llama-server | 19.45.959.713 I slot print_timing: id  0 | task 4459 | n_gen =    326, tg =   3.61 t/s, tg_3s =   3.44 t/s
+2026-10-27 16:01:31,359 | INFO    | llama-server | 19.49.062.209 I slot print_timing: id  0 | task 4459 | n_gen =    341, tg =   3.65 t/s, tg_3s =   4.83 t/s
+2026-10-27 16:01:37,049 | INFO    | llama-server | 19.54.751.876 I slot print_timing: id  0 | task 4459 | n_gen =    348, tg =   3.51 t/s, tg_3s =   1.23 t/s
+2026-10-27 16:01:40,198 | INFO    | llama-server | 19.57.900.893 I slot print_timing: id  0 | task 4459 | n_gen =    365, tg =   3.57 t/s, tg_3s =   5.40 t/s
+2026-10-27 16:01:43,237 | INFO    | llama-server | 20.00.940.007 I slot print_timing: id  0 | task 4459 | n_gen =    381, tg =   3.62 t/s, tg_3s =   5.26 t/s
+2026-10-27 16:01:46,337 | INFO    | llama-server | 20.04.040.565 I slot print_timing: id  0 | task 4459 | n_gen =    398, tg =   3.67 t/s, tg_3s =   5.48 t/s
+2026-10-27 16:01:49,434 | INFO    | llama-server | 20.07.137.695 I slot print_timing: id  0 | task 4459 | n_gen =    416, tg =   3.73 t/s, tg_3s =   5.81 t/s
+2026-10-27 16:01:52,495 | INFO    | llama-server | 20.10.197.922 I slot print_timing: id  0 | task 4459 | n_gen =    433, tg =   3.78 t/s, tg_3s =   5.56 t/s
+2026-10-27 16:01:55,552 | INFO    | llama-server | 20.13.255.626 I slot print_timing: id  0 | task 4459 | n_gen =    450, tg =   3.83 t/s, tg_3s =   5.56 t/s
+2026-10-27 16:01:58,637 | INFO    | llama-server | 20.16.341.510 I slot print_timing: id  0 | task 4459 | n_gen =    466, tg =   3.86 t/s, tg_3s =   5.18 t/s
+2026-10-27 16:02:01,838 | INFO    | llama-server | 20.19.541.095 I slot print_timing: id  0 | task 4459 | n_gen =    484, tg =   3.91 t/s, tg_3s =   5.63 t/s
+2026-10-27 16:02:04,956 | INFO    | llama-server | 20.22.659.452 I slot print_timing: id  0 | task 4459 | n_gen =    500, tg =   3.94 t/s, tg_3s =   5.13 t/s
+2026-10-27 16:02:08,109 | INFO    | llama-server | 20.25.812.841 I slot print_timing: id  0 | task 4459 | n_gen =    510, tg =   3.92 t/s, tg_3s =   3.17 t/s
+2026-10-27 16:02:11,263 | INFO    | llama-server | 20.28.966.459 I slot print_timing: id  0 | task 4459 | n_gen =    517, tg =   3.88 t/s, tg_3s =   2.22 t/s
+2026-10-27 16:02:14,487 | INFO    | llama-server | 20.32.190.394 I slot print_timing: id  0 | task 4459 | n_gen =    528, tg =   3.87 t/s, tg_3s =   3.41 t/s
+2026-10-27 16:02:17,667 | INFO    | llama-server | 20.35.370.350 I slot print_timing: id  0 | task 4459 | n_gen =    542, tg =   3.88 t/s, tg_3s =   4.40 t/s
+2026-10-27 16:02:19,546 | INFO    | llama-server | 20.37.249.158 I slot print_timing: id  0 | task 4459 | prompt eval time =    2899.16 ms /    47 tokens (   61.68 ms per token,    16.21 tokens per second)
+2026-10-27 16:02:19,546 | INFO    | llama-server | 20.37.249.171 I slot print_timing: id  0 | task 4459 |        eval time =  141286.66 ms /   550 tokens (  257.35 ms per token,     3.89 tokens per second)
+2026-10-27 16:02:19,547 | INFO    | llama-server | 20.37.249.174 I slot print_timing: id  0 | task 4459 |       total time =  144185.82 ms /   597 tokens
+2026-10-27 16:02:19,547 | INFO    | llama-server | 20.37.249.176 I slot print_timing: id  0 | task 4459 |    graphs reused =       4943
+2026-10-27 16:02:19,549 | INFO    | httpx2 | HTTP Request: POST http://127.0.0.1:8080/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-27 16:02:19,549 | INFO    | llama-server | 20.37.249.179 I slot print_timing: id  0 | task 4459 |   graph reallocs =          0    /     0        (same size) / (changed size)
+2026-10-27 16:02:19,581 | INFO    | llama-server | 20.37.249.711 I slot      release: id  0 | task 4459 | stop processing: n_tokens = 4095, truncated = 1
+2026-10-27 16:02:19,936 | INFO    | llama-server | 20.37.639.388 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.890 (> 0.100 thold), f_keep = 0.865
+2026-10-27 16:02:19,937 | INFO    | llama-server | 20.37.639.846 I slot launch_slot_: id  0 | task 5011 | processing task, is_child = 0
+2026-10-27 16:02:39,058 | INFO    | llama-server | 20.56.761.114 I slot print_timing: id  0 | task 5011 | prompt processing, n_tokens =    436, progress = 1.00, t =  19.12 s / 22.80 tokens per second
+2026-10-27 16:02:56,595 | INFO    | llama-server | 21.14.297.959 I slot print_timing: id  0 | task 5011 | n_gen =    100, tg =   5.75 t/s, tg_3s =   5.81 t/s
+2026-10-27 16:02:58,912 | INFO    | llama-server | 21.16.615.070 I slot print_timing: id  0 | task 5011 | prompt eval time =   19446.24 ms /   440 tokens (   44.20 ms per token,    22.63 tokens per second)
+2026-10-27 16:02:58,912 | INFO    | llama-server | 21.16.615.085 I slot print_timing: id  0 | task 5011 |        eval time =   19528.88 ms /   113 tokens (  174.36 ms per token,     5.74 tokens per second)
+2026-10-27 16:02:58,913 | INFO    | llama-server | 21.16.615.087 I slot print_timing: id  0 | task 5011 |       total time =   38975.11 ms /   553 tokens
+2026-10-27 16:02:58,913 | INFO    | llama-server | 21.16.615.089 I slot print_timing: id  0 | task 5011 |    graphs reused =       5053
+2026-10-27 16:02:58,913 | INFO    | llama-server | 21.16.615.092 I slot print_timing: id  0 | task 5011 |   graph reallocs =          0    /     0        (same size) / (changed size)
+2026-10-27 16:02:58,918 | INFO    | llama-server | 21.16.620.981 I slot      release: id  0 | task 5011 | stop processing: n_tokens = 4095, truncated = 1
+2026-10-27 16:02:58,918 | INFO    | httpx2 | HTTP Request: POST http://127.0.0.1:8080/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-27 16:02:58,926 | INFO    | gemma_agent.loop | Model produced no tool call; stopping
+2026-10-27 16:02:58,936 | INFO    | gemma_agent.llama | Stopping llama-server

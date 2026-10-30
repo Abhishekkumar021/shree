@@ -10,6 +10,7 @@ from gemma_agent.config.settings import Settings
 from gemma_agent.guardrails.errors import GuardrailError
 from gemma_agent.guardrails.policy import GuardrailPolicy
 from gemma_agent.llm.client import LlamaChatClient
+from gemma_agent.llm.messages import expand_tool_calls
 from gemma_agent.llm.prompts import default_system_prompt
 from gemma_agent.tools.registry import ToolRegistry, build_default_registry
 
@@ -37,8 +38,10 @@ class AgentLoop:
                 {
                     "role": "user",
                     "content": (
-                        "Fix the following software issue in the workspace. "
-                        "Use tools. Run tests with run_code. Call submit_patch when done.\n\n"
+                        "Work on the following request in the workspace. "
+                        "If the workspace is empty, create the project with write_file. "
+                        "Use list_dir before read_file. Run tests with run_code. "
+                        "Call submit_patch when done.\n\n"
                         f"{issue}"
                     ),
                 },
@@ -52,13 +55,15 @@ class AgentLoop:
                 actions = list(reply.get("tool_calls") or [])
                 if not actions:
                     actions = extract_actions(reply.get("content") or "")
-                state.messages.append(
-                    {
-                        "role": "assistant",
-                        "content": reply.get("content") or "",
-                        "tool_calls": actions,
-                    }
-                )
+                assistant_message: dict[str, Any] = {
+                    "role": "assistant",
+                    "content": reply.get("content") or None,
+                }
+                if actions:
+                    assistant_message["tool_calls"] = expand_tool_calls(actions)
+                else:
+                    assistant_message["content"] = reply.get("content") or ""
+                state.messages.append(assistant_message)
                 if not actions:
                     if "submit_patch" in (reply.get("content") or ""):
                         state.patch = self.tools.call("submit_patch", {})
@@ -79,9 +84,8 @@ class AgentLoop:
                     state.messages.append(
                         {
                             "role": "tool",
-                            "name": name,
                             "content": result,
-                            "tool_call_id": action.get("id", name),
+                            "tool_call_id": action.get("id") or name,
                         }
                     )
                     if name == "submit_patch" and not result.startswith("ERROR"):

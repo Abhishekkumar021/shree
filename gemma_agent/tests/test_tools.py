@@ -14,6 +14,12 @@ def make_registry(tmp_path: Path):
     return build_default_registry(policy), policy
 
 
+def test_list_dir_empty(tmp_path: Path) -> None:
+    registry, _ = make_registry(tmp_path)
+    text = registry.call("list_dir", {"path": "."})
+    assert "EMPTY_WORKSPACE" in text
+
+
 def test_write_and_read(tmp_path: Path) -> None:
     registry, _ = make_registry(tmp_path)
     registry.call("write_file", {"filepath": "hello.py", "content": "print('hi')\n"})

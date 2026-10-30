@@ -27,6 +27,12 @@ class ReadFileTool:
         start_line: int | None = None,
         end_line: int | None = None,
     ) -> str:
+        resolved = self.policy.paths.resolve(filepath)
+        if resolved.is_dir():
+            return (
+                f"ERROR: {filepath!r} is a directory. "
+                "Use list_dir to see files, then read_file on a specific path."
+            )
         path = self.policy.paths.check_read(filepath)
         if not path.is_file():
             return f"ERROR: file not found: {filepath}"
@@ -39,6 +45,43 @@ class ReadFileTool:
         sliced = lines[start - 1 : end]
         numbered = [f"{index + start}|{line}" for index, line in enumerate(sliced)]
         return "\n".join(numbered)
+
+
+class ListDirTool:
+    name = "list_dir"
+    description = "List files and folders in a workspace directory. Use this instead of read_file on a folder."
+    parameters: dict[str, Any] = {
+        "type": "object",
+        "properties": {
+            "path": {"type": "string"},
+            "max_entries": {"type": "integer"},
+        },
+    }
+
+    def __init__(self, policy: GuardrailPolicy) -> None:
+        self.policy = policy
+
+    def run(self, path: str = ".", max_entries: int = 200) -> str:
+        directory = self.policy.paths.resolve(path or ".")
+        if not directory.exists():
+            return f"ERROR: path not found: {path}"
+        if not directory.is_dir():
+            return f"ERROR: not a directory: {path}"
+        entries: list[str] = []
+        for child in sorted(directory.iterdir(), key=lambda item: item.name.lower()):
+            try:
+                self.policy.paths.resolve(str(child.relative_to(self.policy.workspace)))
+            except Exception:
+                continue
+            kind = "dir" if child.is_dir() else "file"
+            rel = child.relative_to(self.policy.workspace)
+            entries.append(f"{kind}\t{rel}")
+            if len(entries) >= max_entries:
+                entries.append("[truncated]")
+                break
+        if not entries:
+            return "EMPTY_WORKSPACE: no files yet. Create them with write_file."
+        return "\n".join(entries)
 
 
 class WriteFileTool:
